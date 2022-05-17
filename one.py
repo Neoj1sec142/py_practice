@@ -26,3 +26,16 @@
 # print(list(range(1, 10,2))) # three args
 #signifies the start, stop, ad steps taken to get there
 # print(list(range(70,100,5))) #= [70,75,80,85,90,95]
+
+# For Loops:
+# for val in sequence:
+#     statements
+# Here the value is a variable that takes the value of the itwm inside 
+# the sequence on each iteration
+
+# for i in range(5):
+#     print(i)
+# for i in range(5):
+#     print('Python')
+# for i in "Python":
+#     print(i)
