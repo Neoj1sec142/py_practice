@@ -19,10 +19,10 @@
 # step(optional):it is an integer value which determines the increment in the sequence
 
 # ex:
-print(list(range(5))) #single argument
+# print(list(range(5))) #single argument
 #signifies the end of the range (excluded)
-print(list(range(1,5))) # two arguments
+# print(list(range(1,5))) # two arguments
 # signifies start and end
-print(list(range(1, 10,2))) # three args
+# print(list(range(1, 10,2))) # three args
 #signifies the start, stop, ad steps taken to get there
-print(list(range(70,100,5))) #= [70,75,80,85,90,95]
+# print(list(range(70,100,5))) #= [70,75,80,85,90,95]
