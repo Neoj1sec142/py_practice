@@ -39,3 +39,13 @@
 #     print('Python')
 # for i in "Python":
 #     print(i)
+
+# While Loops:
+# execuats a block of code until the condition is met
+# while boolean_expression:
+#   statement(s)
+
+i = 0
+while i<3:
+    print("I love Python")
+    i = i+1
