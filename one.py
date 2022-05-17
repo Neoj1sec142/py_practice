@@ -45,7 +45,20 @@
 # while boolean_expression:
 #   statement(s)
 
-i = 0
-while i<3:
-    print("I love Python")
-    i = i+1
+# i = 0
+# while i<3:
+#     print("I love Python")
+#     i = i+1
+
+# The Break Statement
+# if you want to exit the loop before a condition is met 
+# you need to do so with a loop control statement(break)
+# if the break is present in a nested loop then it terminates
+# only thos loops which contain a break statement
+
+str = "Goodmorning"
+for i in str:
+    if i == "m":
+        break 
+    else:
+        print(i)
