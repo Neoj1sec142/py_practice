@@ -7,7 +7,7 @@ Practice python lessons
     * Wish me Luck
 
 ## Todo Next:
-[] Loops
+[x] Loops
 [] Lists 
 [] Read-Only Lists (tuples)
 [] Key Value Pairs
