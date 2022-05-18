@@ -56,9 +56,23 @@
 # if the break is present in a nested loop then it terminates
 # only thos loops which contain a break statement
 
-str = "Goodmorning"
-for i in str:
-    if i == "m":
-        break 
-    else:
-        print(i)
+# str = "Goodmorning"
+# for i in str:
+#     if i == "m":
+#         break 
+#     else:
+#         print(i)
+
+# For ex
+
+# num = int(input("Enter the number for which you wish to generate the mulitplication table:"))
+# for i in range(1,11):
+#     print(num,'x',i,'=',num*i)
+
+# While ex
+# num = int(input("Enter the number till where you want to generate even numbers:"))
+# i=0 
+# while i<= num:
+#     if i%2==0:
+#         print(i)
+#     i=i+1
