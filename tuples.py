@@ -11,3 +11,15 @@
 # tup2 = (1,4,6,3,9)
 # tup3 = ("John", 23,56.3,True)
 # print(tup3) #= ('John', 23, 56.3, True)
+
+# Manipulating Tuples:
+# languages = ("Python", "Java", "Ruby", "Lisp")
+# print(languages[1]) #= Java accessing
+# print(languages[1:4]) #= ('Java', 'Ruby', 'Lisp') slicing
+# since tuples are immutable we cant delete items inside
+# we can however delete the entire tuple
+# tupl1 = (12,56,98)
+# print(tupl1)
+# del tupl1
+
+# Basic Operations on Tuples:
