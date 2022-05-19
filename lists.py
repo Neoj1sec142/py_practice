@@ -83,3 +83,37 @@
 # #print(names) #= ['James', 'Ron', 'Sam', 'Nick', 'Barry']
 # names.remove("Nick")
 # print(names) #= ['James', 'Ron', 'Sam', 'Barry']
+# 
+# Smart Lists:
+#   There are instance where we want to create lists at runtime or
+#   create a list from another list or to create a list depending on user data
+# EX Below is assuming we want to create a list of even nums at runtime
+
+# even = []
+# for x in range(1,11):
+#     if x%2 == 0:
+#         even.append(x)
+# print(even) #= [2, 4, 6, 8, 10]
+# Here we run a loop in the given range, if num is even then we append it to list
+# That being said, theres a bette way... List Comprehension:
+#   is an elegant way to define and create a list in python. We can create lists
+#   just like mathmatical statements and only in a single line (comprehension has easier syntax)
+# Parts to List Comprehension:
+#   Output Expression
+#   Input Sequence
+#   Variable representing the member of the input seq
+#   An Optional predicate part
+
+# EX mirroring above smart list ex in list comprehension
+# even = [x for x in range(1,11) if x%2 == 0]
+# print(even) #= [2, 4, 6, 8, 10]
+# x is the output expression
+# range(1,11) is the input seq
+# x is variable and
+# if x%2 == 0 if predicate part/condition `
+# You dont always need all the parts though:
+# str = "Hello, List"
+# charList = [x for x in str]
+# print(charList) #= ['H', 'e', 'l', 'l', 'o', ',', ' ', 'L', 'i', 's', 't']
+# we broke a string by characters and stored them in a list here
+
