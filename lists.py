@@ -53,3 +53,33 @@
 #         break
 # else:
 #     print("Mango not found")
+
+# List Functions:
+# python has some built in functions for lists: syntax: function(list)
+# len(list) -returns the length of the list
+# min(list) - returns the elements if the list with the minimum value
+# max(list) - returns the elemenets of the list with the maximum value
+
+# nums = [23, 56, 78, 13, 98, 33]
+# print(len(nums)) #= 6
+# print(max(nums)) #= 98
+# print(min(nums)) #= 13
+
+# Python provides a few built in methods to work with lists also:
+# method syntax: list.method()
+#
+# append(element) - adds the passed element to the end of the list
+# insert(index, element) - inserts the passed ele at the passed index
+# pop() - removes and return the last element from the list
+# remove(element) - removes the passed ele from the list
+# reverse() - reverse the order of items in a list
+# index(element) - return the index of the first matched item
+# count(element) - returns the count of how many times the passed element occurs
+# 
+# names = ['James', 'Sam', 'Nick']
+# names.append("Barry")
+# #print(names) #= ['James', 'Sam', 'Nick', 'Barry']
+# names.insert(1, "Ron")
+# #print(names) #= ['James', 'Ron', 'Sam', 'Nick', 'Barry']
+# names.remove("Nick")
+# print(names) #= ['James', 'Ron', 'Sam', 'Barry']
