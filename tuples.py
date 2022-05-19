@@ -37,3 +37,34 @@
 # cities = ("London", "Tokyo", "New York")
 # for city in cities: 
 #     print(city)
+
+# Built in functions for tuples:
+# len(tuple) - returns the length of the tuples
+# min(tuple) - return the elements of the tuples with the minimum value
+# max(tuple) - return the elements of the tuples with the maximum value
+# nums = (3,56,78,13,98,33)
+# print(len(nums)) #= 6
+# print(min(nums)) #= 3
+# print(max(nums)) #= 98
+
+# Tuple Methods:
+#   since tuples are immutable we only have a few tuple methods
+# index(element) - returns the index of the first mathced item
+# count(element) - returns the count of how many times the passed ele occurs
+# exam = (23,45,23,67,89,1)
+# print(exam.count(23)) #= 2
+# print(exam.index(67)) #= 3
+
+### Why Tuples? ###
+
+# We generally use tuples for heterogeneous(different) data types
+# and lists for homogeneous(similar) data types
+# 
+# Since tuples are immutable, iterating though a tuple is faster than a list.
+#  so there is a slight performace boost
+# 
+# Tuples that contain immutable elements can be used as a key for a dictionary
+# (Dictionarys = Objects in JS)
+# 
+# If you have data that doesn't change, implementing it as a tuple
+#  will guarentee that is remains write-protected
