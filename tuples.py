@@ -23,3 +23,17 @@
 # del tupl1
 
 # Basic Operations on Tuples:
+# One thing to keep in mind when using operations on tuples is that they are
+# not like lists, since they are immutable any operations will always 
+# return a new tuple
+
+# tup1 = (1,2,3)
+# tup2 = (4,5,6)
+# print(tup1+tup2) #= (1, 2, 3, 4, 5, 6) concatentation
+# print(tup1*3) #= (1, 2, 3, 1, 2, 3, 1, 2, 3) repetition
+# print(2 in tup1) #= True membership
+
+# For loop tuple iteration:
+# cities = ("London", "Tokyo", "New York")
+# for city in cities: 
+#     print(city)
