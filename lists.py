@@ -40,4 +40,16 @@
 # print("sam" in enrolledList) #= True
 # print("samuel" in enrolledList) #= False
 
+# Iterating over lists
 
+# fruits = ['apple', 'mango', 'cherry', 'banana']
+# for i in fruits:
+#     print(i)
+
+# fruits = ['apple', 'mango', 'cherry', 'banana']
+# for i in fruits:
+#     if i == 'mango':
+#         print("Mango Found")
+#         break
+# else:
+#     print("Mango not found")
