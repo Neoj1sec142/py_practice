@@ -8,7 +8,7 @@ Practice python lessons
 
 ## Todo Next:
 [x] Loops
-[] Lists 
+[x] Lists 
 [] Read-Only Lists (tuples)
 [] Key Value Pairs
 [] Sets
