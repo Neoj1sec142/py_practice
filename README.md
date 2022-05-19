@@ -9,8 +9,8 @@ Practice python lessons
 ## Todo Next:
 [x] Loops
 [x] Lists 
-[] Read-Only Lists (tuples)
-[] Key Value Pairs
+[x] Read-Only Lists (tuples)
+[] Key Value Pairs (Dictionaries)
 [] Sets
 [] Functions
 [] Supermarket Cashier Project
