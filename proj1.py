@@ -48,4 +48,14 @@ def getDiscount(billAmt, membership):
     else: 
         print("No discount on items under 25")
     return billAmt
-getDiscount(30, 'Silver')
+
+def makeBill(buyingData, membership):
+    billAmt = 0 
+    for key,value in buyingData.items():
+        billAmt += getPrice(key,value)
+        billAmt = getDiscount(billAmt, membership)
+    print("The discounted ammount is $" + str(billAmt))
+
+buyingData = enterProducts()
+membership = input("Enter customer membership:")
+makeBill(buyingData, membership)
