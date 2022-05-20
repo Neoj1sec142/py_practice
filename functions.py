@@ -55,6 +55,27 @@
 # and if the arguement is not passed it will rely on the default name
 # 
 
-# LAMBADA IN PYTHON #
+# LAMBDA IN PYTHON #
+
+# Lambda functions are a kind of shortcut to write and define functions in python
+# they do not have a name otherwise called anonymous functions
+# 
+# very useful when working with django, machine learning, and data science
+# lambada funcitons are defined using the lambda keyword
+# EX lambada arguments: expression
+
+# a lambda function can take any number of arguments but contain only a 
+#   single epression
+# an expression isa piece of code exe by the lambda function which 
+#   may or may not return any value
+# syntatically lambada function are restricted to only a single expression
+# lambda functions do not use the return keyword
+# EX def normal to lambda #
+# def add(num1, num2):
+#     return num1 + num2
+
+# since lambda funcitons do not have names we can store them in varibale and acces that
+# add = lambda num1, num2 : num1+num2
+# print(add(5,6))
 
 #  #
