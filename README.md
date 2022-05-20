@@ -12,8 +12,8 @@ Practice python lessons
 [x] Read-Only Lists (tuples)
 [x] Key Value Pairs (Dictionaries)
 [x] Sets
-[] Functions
-[] Supermarket Cashier Project
+[x] Functions
+[x] Supermarket Cashier Project
 [] File Handling
 [] Exception Handling
 [] Modules
