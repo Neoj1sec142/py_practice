@@ -16,3 +16,18 @@ def enterProducts():
             print("Please select correct option.")
     return buyingData
 
+def getPrice(prod, amt):
+    priceData = {
+        'Biscuit':3,
+        'Chicken':5,
+        'Egg':1,
+        'Fish':3,
+        'Coke':2,
+        'Bread':2,
+        'Apple':3,
+        'Onion':3
+    }
+    subtotal = priceData[prod] * amt
+    print(prod + '$' + str(priceData[prod]) + 'x' +
+    str(amt) + '=' + str(subtotal))
+    return subtotal
