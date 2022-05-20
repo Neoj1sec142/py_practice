@@ -50,4 +50,16 @@
 # print(varDict) #= {'Asia': ['India', 'UAE', 'China', 'Japan'], 101: 'Dalmations'}
 # varDict["Asia"].remove('China')
 # print(varDict)
+
+# Iterating Over a Dictionary:
+# iterating over a dictionary can be tricky because of its kvp
+# this section will show a few different ways of accomplishing this
+empData = {101:"Bravo", 102:"Sten"}
+# for i in empData:
+#     print(i) #= 101 102 only keys
+# for i in empData.values():
+#     print(i) #= Bravo Sten
+# for i in empData.items():
+#     print(i) #= (101, 'Bravo') (102, 'Sten')
+
 #  #
