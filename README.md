@@ -7,6 +7,7 @@ Practice python lessons
     * Wish me Luck
 
 ## Todo Next:
+### Sect 1
 [x] Loops
 [x] Lists 
 [x] Read-Only Lists (tuples)
@@ -14,12 +15,14 @@ Practice python lessons
 [x] Sets
 [x] Functions
 [x] Supermarket Cashier Project
+### Sect 2
 [] File Handling
 [] Exception Handling
 [] Modules
 [] OOP
 [] Multithreading
 [] Library Management Project 2
+### Sect 3
 [] Database Connectivity
 [] GUI
 [] Employee CRUD App
