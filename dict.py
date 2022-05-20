@@ -28,4 +28,26 @@
 # print(example) #= {1: 'Den', 2: 'Nick', 3: 'Sim'}
 # if the key value pair is present then it gets updated if not it gets created
 # del example[1] #= we can delete KVP by key or the whole dictionary with del
+# 
+# Dictionary Functions:
+# Python provides some inprotant functions for dictionaries
+# 
+# keys() - returns the list of dictionary keys
+# values() - returns the list of dictionary values
+# clear() - removes all elements of a dictionary creating an empty dictionary
+# get(key) - returns the value of the specified key, if no key return none
+# items() - returns a list of dictionaries key value pairs in tuple form
+# update(dict) - adds specified dictionary(items) key values pairs to the dictionary
+# empData = {101:"Bravo", 102:"Asten", 103:"Kerry"}
+# print(empData.keys()) #= dict_keys([101, 102, 103])
+# print(empData.values()) #= dict_values(['Bravo', 'Asten', 'Kerry'])
+# print(empData.items()) #= dict_items([(101, 'Bravo'), (102, 'Asten'), (103, 'Kerry')])
+# empData.update({104:"Curan", 105:"Elly"})
+# print(empData) #= {101: 'Bravo', 102: 'Asten', 103: 'Kerry', 104: 'Curan', 105: 'Elly'}
+# the update method will create a new pair if the key is not found but overwrites exsisting ones
+# varDict = {"Asia":["India", "UAE", "China"], 101:"Dalmations"}
+# varDict["Asia"].append("Japan") 
+# print(varDict) #= {'Asia': ['India', 'UAE', 'China', 'Japan'], 101: 'Dalmations'}
+# varDict["Asia"].remove('China')
+# print(varDict)
 #  #
