@@ -26,4 +26,35 @@
 # contian one or more Python statements -- indented
 # return statments are option but return the value from function
 # calling a funciton EX func_name()
+
+# def sayHello();
+#   print("hello world")
+
+# def sayHello(name):
+#     print("hello", name)
+# sayHello("Neo")
+
+# here we are passing sayHello the paramter name and printing it iin concatentated str
+# functions dont require params but if they have them and we dont pass the funciton the 
+# expected param when calling it it will result in a n error.
+# 
+# def addNum(nm1, nm2):
+#     nm3 = nm1 + nm2
+#     return nm3
+
+# parameters are inside the functions ()
+# arguements are passed to the function in respect to the params
+# these values may come from user or based on caculations or processing
+# 
+# We can also pass a default value to our funcitons 
+
+# def sayGello(name = 'GELLY'):
+#     print("Hello",name)
+# sayGello()
+
+# and if the arguement is not passed it will rely on the default name
+# 
+
+# LAMBADA IN PYTHON #
+
 #  #
