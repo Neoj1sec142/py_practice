@@ -10,7 +10,7 @@ Practice python lessons
 [x] Loops
 [x] Lists 
 [x] Read-Only Lists (tuples)
-[] Key Value Pairs (Dictionaries)
+[x] Key Value Pairs (Dictionaries)
 [] Sets
 [] Functions
 [] Supermarket Cashier Project
