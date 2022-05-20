@@ -11,7 +11,7 @@ Practice python lessons
 [x] Lists 
 [x] Read-Only Lists (tuples)
 [x] Key Value Pairs (Dictionaries)
-[] Sets
+[x] Sets
 [] Functions
 [] Supermarket Cashier Project
 [] File Handling
