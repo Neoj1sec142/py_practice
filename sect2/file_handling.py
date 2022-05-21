@@ -46,5 +46,12 @@
 # print(fp.read(6)) #= Python
 # print(fp.readline()) #= Python is a general-purpose, high-level, object-oriented programming language.
 
-## Reading Data From Files:
-#  #
+## Writing Data To Files:
+# fp = open('python.txt', 'a')
+# Pythons built in methods for writing to doc
+# write() - writes any string to an open writable file
+# syntax : file_object.write(data)
+# fp.write("\npython is a really cool language")
+# after running the code if you check out the python.txt file the file has actually been overwritten
+
+# CLOSING A FILE: #
