@@ -54,4 +54,28 @@
 # fp.write("\npython is a really cool language")
 # after running the code if you check out the python.txt file the file has actually been overwritten
 
-# CLOSING A FILE: #
+# CLOSING A FILE:
+# as with DBs we need to close them after to free the provisional usage of RAM 
+# syntax : file_object.close() 
+# fp = open('python.txt', 'r')
+# print(fp.read())
+# fp.close()
+
+# Manipulating File Pointers
+# 
+# The file pointer is basically the cursor that represents the position where it is in the file.
+# When working w/files the pointer is at the beginning when we start reading or writeing to a file
+# While appending, the file pointer is at the end of the file
+# 
+# Methods:
+# tell() - method tells you the current position of the pointer within the file
+# seek(position, from) - changes the current file position. 
+#       The position arguement indicates the number of bytes to be moved.
+#       The 'from' argument(optional) specifies the reference position fro where the byte are moved
+# fp = open('python.txt', 'r')
+# print("Pointer position  before reading is:", fp.tell()) #= 0
+# print(fp.read())
+# print("Pointer position after reading is:", fp.tell()) #= 54
+# fp.seek(5)
+# fp.close()
+#  #
