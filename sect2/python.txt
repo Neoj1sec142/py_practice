@@ -1,0 +1,2 @@
+Python is a general-purpose, high-level, object-oriented programming language.
+We all love Python.
