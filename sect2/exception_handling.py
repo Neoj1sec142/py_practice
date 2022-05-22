@@ -23,4 +23,20 @@
 #   in onw place and in one manner
 # an exception is a convenient method for handling err messages
 # 
-# Oython Exceptions: #
+# Python Exceptions:
+# An exception class in python is the base class form which exceptions inherit.
+# this means, all the common built-in exceptions inherity from this class
+# 
+# -StandardError - is the base class for all built-in exceptions except StopIteration and SystemExit
+# -ArithmeticError - is the base class for all error that occur for numeric calculation
+# -FloatingPointError - is raised when a floating-point calculation fails
+# -ZeroDivisionError - is raise when a division or modulo by zero takes place for all numeric types
+# -EOFError - is raised when there is no input from the input() funciton and the end of the file is reached
+# -ImportError - is raise when an import statment fails
+# -KeyboardInterrupt - is raise when the user interrupts the program execution ususal Ctrl + C
+# -IndexError - is raised when and index is not found in a sequence
+# -NameError - is raise when an identifier is not found in the local or global namespace
+# -IOError - is raised when an input/output operation fails, such as the print statement
+#       or the open() funciton when trying to open a file that doesnt exist
+# -SyntaxError - is raised when there is an error in Python syntax
+# -IndentationError - is raise when indentation is not specified properly #
