@@ -39,4 +39,8 @@
 # -IOError - is raised when an input/output operation fails, such as the print statement
 #       or the open() funciton when trying to open a file that doesnt exist
 # -SyntaxError - is raised when there is an error in Python syntax
-# -IndentationError - is raise when indentation is not specified properly #
+# -IndentationError - is raise when indentation is not specified properly
+# -TypeError - is raise when an operation or funciton is attempted that is invaild for the specified data type
+# -ValueError - is raise when the buiult-in funcituon for a dta type has the valid type of argument, but the
+#           argument have invalid values specified
+#  #
