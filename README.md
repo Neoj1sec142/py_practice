@@ -16,7 +16,7 @@ Practice python lessons
 [x] Functions
 [x] Supermarket Cashier Project
 ### Sect 2
-[] File Handling
+[x] File Handling
 [] Exception Handling
 [] Modules
 [] OOP
