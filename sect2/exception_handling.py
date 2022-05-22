@@ -88,3 +88,20 @@
 #     print(fp.close())
 # except Exception as e:
 #     print("Oops, looks like this file doesn't exist", e)
+
+# try:
+#     num1 = int(input("Enter first number:"))
+#     num2 = int(input("Enter second number:"))
+#     print("Division is:", num1/num2)
+#     print("Thank you for choosing our calculator")
+# except Exception as e:
+#     print("Oops you cannot divide a number by zero")
+# finally:
+#     print("Thank you for using our calculator")
+
+# Here you can see that the thank you statement is not executed if the 
+    # exception is raised in the division line therefore we can assume that 
+    # inside the try block if an err is thrown the following code will not
+    # execute and it will differ to the except statement
+# Sometimes we still need to execute something after the excption though(Finally)
+#  #
