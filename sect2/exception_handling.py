@@ -43,4 +43,48 @@
 # -TypeError - is raise when an operation or funciton is attempted that is invaild for the specified data type
 # -ValueError - is raise when the buiult-in funcituon for a dta type has the valid type of argument, but the
 #           argument have invalid values specified
-#  #
+
+# Exception Handling Structure:
+# Python has two following statements that help us to handle and work with exceptions
+#   Try Statement
+#   Except Statement(Kind of like a catch)
+
+# EX:
+# try:
+    #statements that can raise the error
+# except Exception1:
+    #if there is Exception1 this block will execute
+# except Exception2:
+    #if there is Exception2 this block will execute
+
+# A single try block can have multiple exceptblocks. Thus if the try throws
+#       multiple exceptions they are handled resepectively
+# You can also provide a generic except clause, which handle any exception.
+#       here we can use the exception class
+# Also after the except clause you can include an else-clause. The code in 
+#       the else block executes if the code in try does not raise any exception
+# 
+# try:
+#     print(name)
+# except NameError:
+#     print("Some err occured. Please contact the dev")
+
+# Or we can eve send the err with message
+
+# try:
+#     print(name)
+# except NameError as e:
+#     print("An err occured please contact the dev", e)
+# try:
+#     num1 = int(input("Enter first number:"))
+#     num2 = int(input("Enter second number:"))
+#     print("Division is:", num1/num2)
+# except Exception as e:
+#     print("Oops you cannot divide a number by zero")
+
+# try:
+#     fp = open('thisdoesnt.txt', 'r')
+#     print(fp.read())
+#     print(fp.close())
+# except Exception as e:
+#     print("Oops, looks like this file doesn't exist", e)
