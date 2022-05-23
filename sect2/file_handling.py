@@ -78,4 +78,9 @@
 # print("Pointer position after reading is:", fp.tell()) #= 54
 # fp.seek(5)
 # fp.close()
-#  #
+
+# The below code imports a custom module from the modules.py page #
+# import modules
+# a=int(input("Enter the first number:"))
+# b=int(input("Enter the second number:"))
+# print("Addition is", modules.add(a,b))
