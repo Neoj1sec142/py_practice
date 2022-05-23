@@ -104,4 +104,16 @@
     # inside the try block if an err is thrown the following code will not
     # execute and it will differ to the except statement
 # Sometimes we still need to execute something after the excption though(Finally)
-#  #
+
+# Raise Exceptions:
+# You can also manually raise an exception yourself using the raise keyword
+# syntax: raise Exception("message")
+# Exception is the type of exception(ex NameError)
+# the arguement message is a value for the exception(optoional)
+# EX #
+# try:
+#     a = int(input("Enter a positive integer:"))
+#     if a <= 0:
+#         raise ValueError("It is not a positive number")
+# except ValueError as e:
+#     print(e)
