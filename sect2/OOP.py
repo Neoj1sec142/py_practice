@@ -187,20 +187,20 @@
 # 
 # Adding Behaviors:
 # - when we define functions inside a class, they are consodered methods
-class Employee:
-        totalEmployees = 0
-        def __init__(self, empName, age, designation, salary):
-                self.empName = empName
-                self.age = age
-                self.designation = designation
-                self.salary = salary
-                Employee.totalEmployees = Employee.totalEmployees + 1
-        def getEmpDetails(self):
-                return self.empName, self.age, self.designation, self.salary
-        def updateSalary(self, newSalary):
-                self.salary = newSalary
-                print('Salary Updated')
-                return self.salary
+# class Employee:
+#         totalEmployees = 0
+#         def __init__(self, empName, age, designation, salary):
+#                 self.empName = empName
+#                 self.age = age
+#                 self.designation = designation
+#                 self.salary = salary
+#                 Employee.totalEmployees = Employee.totalEmployees + 1
+#         def getEmpDetails(self):
+#                 return self.empName, self.age, self.designation, self.salary
+#         def updateSalary(self, newSalary):
+#                 self.salary = newSalary
+#                 print('Salary Updated')
+#                 return self.salary
 # as you can see totalEmployees is noot defined inside the __init__ method, 
 #       and also it is not passed in the constructor
 # this is becayse that value has to be calculated by the program and should not
@@ -215,13 +215,46 @@ class Employee:
 # the updateSalary() method accepts a parameter as newSalary and updates the 
 #       self.salary to the passed value
 # Every method in a class has a default paramter as self #
-empOne = Employee('John', 35, 'Mnager', '35000')
-print(empOne.getEmpDetails())
-empTwo = Employee('Sam', 26, 'Python Dev', 27000)
-print(empTwo.getEmpDetails())
+# empOne = Employee('John', 35, 'Mnager', '35000')
+# print(empOne.getEmpDetails())
+# empTwo = Employee('Sam', 26, 'Python Dev', 27000)
+# print(empTwo.getEmpDetails())
 
-empOne.updateSalary(40000)
-empTwo.updateSalary(175000)
-print(empTwo.getEmpDetails())
-print(Employee.totalEmployees)
-                
+# empOne.updateSalary(40000)
+# empTwo.updateSalary(175000)
+# print(empTwo.getEmpDetails())
+# print(Employee.totalEmployees)
+
+# Inheritance is when one class inherits various characteristics and capabilities from another class
+#       here the characteristics we are talkin about are the attributes of yhe class, while the capabilities
+#       are its behavior(methods of the class)
+# Parent Class: is the class being inherited from the other classes. It is also called the Base Class
+# Child Class: is the class that inherits from another, also called a Derived Class
+# SYNTAX of inheritance
+# class BaseClass:
+        # body of base class
+#       class DerivedClass(BaseClass):
+#               #body of derived class
+# 
+# as you can see we can pass the name of the base to the derived class in parentheses
+# class Employee:
+#         totalEmployees = 0
+#         def __init__(self, empName, age, designation, salary):
+#                 self.empName = empName
+#                 self.age = age
+#                 self.designation = designation
+#                 self.salary = salary
+#                 Employee.totalEmployees = Employee.totalEmployees + 1
+#         def getEmpDetails(self):
+#                 return self.empName, self.age, self.designation, self.salary
+#         def updateSalary(self, newSalary):
+#                 self.salary = newSalary
+#                 print('Salary Updated')
+#                 return self.salary
+# class Intern(Employee):
+#         pass
+# whenever we create an object of the child class and try to access it, it will first search
+#       for that in the child class, if found it will execute it and return the data. If
+#       not found, then it will search and access the data from the parent class #
+# internOne = Intern('Tom', 22, 'Marketing', 12000)
+# print(internOne.getEmpDetails())       
