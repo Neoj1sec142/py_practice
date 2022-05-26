@@ -260,26 +260,26 @@
 # print(internOne.getEmpDetails())
 # 
 #
-class Employee:
-        totalEmployees = 0
-        def __init__(self, empName, age, designation, salary):
-                self.empName = empName
-                self.age = age
-                self.designation = designation
-                self.salary = salary
-                Employee.totalEmployees = Employee.totalEmployees + 1
-        def getEmpDetails(self):
-                return self.empName, self.age, self.designation, self.salary
-        def updateSalary(self, newSalary):
-                self.salary = newSalary
-                print('Salary Updated')
-                return self.salary
-class Intern(Employee):
-        def __init__(self, empName, age, designation, salary, interPeriod):
-                self.internPeriod = interPeriod
-                Employee.__init__(self, empName, age, designation, salary) 
-        def getPeriod(self):
-                return "Intership peroid (in months) is:", self.internPeriod   
+# class Employee:
+#         totalEmployees = 0
+#         def __init__(self, empName, age, designation, salary):
+#                 self.empName = empName
+#                 self.age = age
+#                 self.designation = designation
+#                 self.salary = salary
+#                 Employee.totalEmployees = Employee.totalEmployees + 1
+#         def getEmpDetails(self):
+#                 return self.empName, self.age, self.designation, self.salary
+#         def updateSalary(self, newSalary):
+#                 self.salary = newSalary
+#                 print('Salary Updated')
+#                 return self.salary
+# class Intern(Employee):
+#         def __init__(self, empName, age, designation, salary, interPeriod):
+#                 self.internPeriod = interPeriod
+#                 Employee.__init__(self, empName, age, designation, salary) 
+#         def getPeriod(self):
+#                 return "Intership peroid (in months) is:", self.internPeriod   
 
 # Since in this example we added the attributes to the intern class rather than
 #       defining those attributes again, we simply define only the attributes
@@ -288,9 +288,9 @@ class Intern(Employee):
 #       of the Derived class using the following syntax
 # BaseClass.__init__(self, param1, param2, etc)
 # EX #
-internOne = Intern('Tom', 22, 'Marketing Intern', 12000, 6)
-print(internOne.getEmpDetails())
-print(internOne.getPeriod()) 
+# internOne = Intern('Tom', 22, 'Marketing Intern', 12000, 6)
+# print(internOne.getEmpDetails())
+# print(internOne.getPeriod()) 
 # Inheritance we've seen until not is collaed the Single Inheritance 
 #       as it enables the derrived cass to inherit properties from a 
 #       single parent class 
@@ -332,6 +332,51 @@ print(internOne.getPeriod())
 # class Intern(Company):
 #       pass
 # 
-# Polymorphism in Python:
+# Polymorphism(Many Forms) in Python:
 # #######################
-#  #
+# In OOP, an object can have various forms in different situations depending 
+#       upon the attirbutes and methods
+# Two Basic Level Types of Polymorphism:
+#       Method Overloading
+#       Method Overriding
+# 
+# Overloading - is one of the most basic forms of Polymorphism in OOP
+#       - its the situation where there are two methods of the same name
+#               but with different parameters in the same class
+#       - there are situations where a method can have different parameters 
+#               so that they can perform parameters so that they cna perform 
+#               deffernt functionalities as required
+#       - consider the area() method - now depending on params passed it 
+#               can behave differently
+#       - for instance, if you want to find the area of a rectangle then the paramters
+#               would be length and breath whereas if you wanted to find the square then the
+#               param would just be one side
+# class Geometry:
+#       method area(length, breath):
+#               return length*breath
+#       method area(side):
+#               return side*side
+# 
+# Now when we make a call to the method area(), and if two params are passed
+#       then it will find the area of the rectangle whereas if one param is passed
+#       it will find the area of a square 
+# Method Overloading in OOP is important but method overloading in Python is not supported
+# 
+# Overriding - is the situation where there are two methods with the same name 
+#               and the same parameters but in two different classes
+#               -method overriding will only come into the picture if the inheritance is involved
+#               -this means the child class has a method with the same name and same params
+#                       as the method in the parent class
+# class Base:
+#       def method(self):
+#               print("Base class method called")
+# class Derived(Base):
+#       def method(self):
+#               print("Dervied called")
+# obj1 = Derived()
+# obj1.method() #= Dervied called
+
+# when the object of the derived class is created, it calles the overridden method
+#       in the chld class instead of calling the method with the same name in the 
+#       parent class
+# you can override methods of the parent class #
