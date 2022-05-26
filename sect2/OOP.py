@@ -183,4 +183,45 @@
 #    individuall recognize the instance(object) and accordingly pass data to the object
 # When multiple objects of a class are created the self kjeyword helps the vlass to know which 
 #       object is requesting to access the attribute and the methods and depending upon the 
-#       object parameters the data is processed #
+#       object parameters the data is processed
+# 
+# Adding Behaviors:
+# - when we define functions inside a class, they are consodered methods
+class Employee:
+        totalEmployees = 0
+        def __init__(self, empName, age, designation, salary):
+                self.empName = empName
+                self.age = age
+                self.designation = designation
+                self.salary = salary
+                Employee.totalEmployees = Employee.totalEmployees + 1
+        def getEmpDetails(self):
+                return self.empName, self.age, self.designation, self.salary
+        def updateSalary(self, newSalary):
+                self.salary = newSalary
+                print('Salary Updated')
+                return self.salary
+# as you can see totalEmployees is noot defined inside the __init__ method, 
+#       and also it is not passed in the constructor
+# this is becayse that value has to be calculated by the program and should not
+#       be passed at the time of object creation
+# so when a new employee is created we update that value by =1
+# since we are not passing it we do not use self to refer to it and instead use
+#       the class name : Employee.totalEmployees
+# such variables that are shared by all the instances(objects) are called Class variables,
+#       And the variables that are defined inside __init__ are called Instance variables
+# Here we created the def getEmpDetails, and updateSlary:
+# the getEmpDetails() simply returns all the details about eh employee
+# the updateSalary() method accepts a parameter as newSalary and updates the 
+#       self.salary to the passed value
+# Every method in a class has a default paramter as self #
+empOne = Employee('John', 35, 'Mnager', '35000')
+print(empOne.getEmpDetails())
+empTwo = Employee('Sam', 26, 'Python Dev', 27000)
+print(empTwo.getEmpDetails())
+
+empOne.updateSalary(40000)
+empTwo.updateSalary(175000)
+print(empTwo.getEmpDetails())
+print(Employee.totalEmployees)
+                
