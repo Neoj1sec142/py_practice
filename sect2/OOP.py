@@ -257,4 +257,81 @@
 #       for that in the child class, if found it will execute it and return the data. If
 #       not found, then it will search and access the data from the parent class #
 # internOne = Intern('Tom', 22, 'Marketing', 12000)
-# print(internOne.getEmpDetails())       
+# print(internOne.getEmpDetails())
+# 
+#
+class Employee:
+        totalEmployees = 0
+        def __init__(self, empName, age, designation, salary):
+                self.empName = empName
+                self.age = age
+                self.designation = designation
+                self.salary = salary
+                Employee.totalEmployees = Employee.totalEmployees + 1
+        def getEmpDetails(self):
+                return self.empName, self.age, self.designation, self.salary
+        def updateSalary(self, newSalary):
+                self.salary = newSalary
+                print('Salary Updated')
+                return self.salary
+class Intern(Employee):
+        def __init__(self, empName, age, designation, salary, interPeriod):
+                self.internPeriod = interPeriod
+                Employee.__init__(self, empName, age, designation, salary) 
+        def getPeriod(self):
+                return "Intership peroid (in months) is:", self.internPeriod   
+
+# Since in this example we added the attributes to the intern class rather than
+#       defining those attributes again, we simply define only the attributes
+#       that are new for the child class, and for th other attibutes, we make
+#       a call to the constructor of the Base class within the constructor
+#       of the Derived class using the following syntax
+# BaseClass.__init__(self, param1, param2, etc)
+# EX #
+internOne = Intern('Tom', 22, 'Marketing Intern', 12000, 6)
+print(internOne.getEmpDetails())
+print(internOne.getPeriod()) 
+# Inheritance we've seen until not is collaed the Single Inheritance 
+#       as it enables the derrived cass to inherit properties from a 
+#       single parent class 
+# A Few More Types of Inheritance:
+# Multilevel Inheritance
+# Mupltiple Inheritance
+# Heirarchical Inheritance
+# 
+# Multilevel - attributed and behaviors of the base class and the derived class are
+#               furtherinherited into the new derived class
+#               - similar to a relationship representing a child and grandfather
+# class Employee:
+#       pass
+# class Intern(Employee):
+#       pass
+# class Bonus(Intern):
+#       pass # bonus will inherit intern and employee
+# 
+# the bonus class cannot directly access the base class since its inheriting from
+#       intern which is further inheriting employee class but it will have all the data
+#       from both employee and intern and will access that way
+# 
+# Multiple - when a class can be derived from more than one base class this type of 
+#               inheritance is called multiple inheritance
+#               -all the features of the base classes are inherited into the derived class
+# class Company:
+#       pass
+# class Employee:
+#       pass
+# class Intern(Company, Employee):
+#       pass
+# 
+# Hierarchical - when more than one derived class is created from a single base class
+#               then it is called hierarchical inheritance
+# class Company:
+#       pass
+# class Employee(Company):
+#       pass
+# class Intern(Company):
+#       pass
+# 
+# Polymorphism in Python:
+# #######################
+#  #
