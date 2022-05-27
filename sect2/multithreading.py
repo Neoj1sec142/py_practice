@@ -40,20 +40,20 @@
 # 
 # consider thee follwing code::
 #  #
-class Example:
-    def run(self):
-        for i in range(5):
-            print("Hello from Example")
+# class Example:
+#     def run(self):
+#         for i in range(5):
+#             print("Hello from Example")
 
-class ExampleTwo:
-    def run(self):
-        for i in range(5):
-            print("Hello from ExampleTwo")
+# class ExampleTwo:
+#     def run(self):
+#         for i in range(5):
+#             print("Hello from ExampleTwo")
 
-example = Example()
-exampleTwo = ExampleTwo()
-example.run()
-exampleTwo.run()
+# example = Example()
+# exampleTwo = ExampleTwo()
+# example.run()
+# exampleTwo.run()
 # This is a bad ex because they cannot be use at the same time #
 # Modern technologies should be able to deal with such situations
 #   and allow the user to use various functionalities simultaneously
@@ -104,4 +104,46 @@ exampleTwo.run()
 #       Semaphore
 #   Exceptions:
 #       Thread Error - raised for various thread related errors, some systems may
-#               throw a runtime error in place of a thread error #
+#               throw a runtime error in place of a thread error
+#  #
+# from threading import *
+# class Example(Thread):
+#     def run(self):
+#         for i in range(400):
+#             print("Hello from Example")
+
+# class ExampleTwo(Thread):
+#     def run(self):
+#         for i in range(400):
+#             print("Hello from ExampleTwo")
+
+# example = Example()
+# exampleTwo = ExampleTwo()
+# example.start()
+# exampleTwo.start()
+# Obviously the above doesnt get the requested 1 after the other
+#   to tdo this we need the time module to ask our loop for a second 
+#   before executing the next one this process needs to be repeated
+#   execute -> wait -> execute
+# We can use the sleep() method which accepts time in seconds as parameters and 
+#   makes the code go to sleep(wait) for that amount of time #
+from threading import *
+from time import sleep
+
+class Example(Thread):
+    def run(self):
+        for i in range(400):
+            print("Hello from Example")
+            sleep(1)
+
+class ExampleTwo(Thread):
+    def run(self):
+        for i in range(400):
+            print("Hello from ExampleTwo")
+            sleep(1)
+
+example = Example()
+exampleTwo = ExampleTwo()
+example.start()
+sleep(0.1)
+exampleTwo.start()
