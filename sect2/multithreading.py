@@ -36,4 +36,72 @@
 #    by using thread-level as well as instruction-level parallesim
 # As the two techniques are complimentary, they are sometimes combined 
 #   in  systems with multiple multithreading CPUs and in CPUs with 
-#   multiple multithreading cores #
+#   multiple multithreading cores
+# 
+# consider thee follwing code::
+#  #
+class Example:
+    def run(self):
+        for i in range(5):
+            print("Hello from Example")
+
+class ExampleTwo:
+    def run(self):
+        for i in range(5):
+            print("Hello from ExampleTwo")
+
+example = Example()
+exampleTwo = ExampleTwo()
+example.run()
+exampleTwo.run()
+# This is a bad ex because they cannot be use at the same time #
+# Modern technologies should be able to deal with such situations
+#   and allow the user to use various functionalities simultaneously
+# 
+# Python provides the following two modules to implement threading in Python
+# thread module (depreciated since Py3)
+# threading module - is the high-level implementation of threading in python and 
+#           the de facto standard for managing multithreading applications
+#           -this module defines manu classes, funcitons, and more
+# 
+# Info About Threading Module:
+#   Factory Functions:
+#       active_count() - returns the count of Tread objects which are still alive
+#       current_thread() - returns ther current object of Thread class
+#       enumerate() - returns a list of all active Tread objects
+#       isDaemon() - returns true is the thread is a daemon
+#       isAlive() - returns true if thread is alive #
+#       Lock() 
+#       RLock()
+#       Semaphore()
+#   Objects:
+#       Lock Object: acquire(), release()
+#       RLock Object: acquire(), release(), blocking
+#   Classes:
+#       Thread - the thread class is the primary class that defines the 
+#               template and operations of a thread in python, it provides all the 
+#               major functionalites required to create and manage a thread
+#               - the most simple way to create a multithreaded python app is to declare
+#                   a class that inherits from the Thread class and overrrides its run() method
+#               - every Thread class has a run() method, and to implement threading, one 
+#                  should override the run() method in their respective classes
+#               - once we inherit a class from the Thread class in the threading module, we can
+#                   create a Thread object from it
+#               -Normallu the whole program is executed by something called the main() thread, but 
+#                   when we create a thread object, each object represents an activity to be performed
+#                   in a separate thread of control
+#           Methods of the Thread class:
+#               run() - denotes the activity of a thread and can be overridden by a class that extends the Thread class
+#               start() - starts the activity of a thread. It must be called only once for each thread because it will throw
+#                       a runtime error if called multiple times
+#               join() - blocks the execution of other code until the thread on which the join() method was called heys terminated
+#           - once a thread object has been made, the start() method can be invoked to begin the execution of the activity
+#               and the join() method can be used to block all other code till the current acitivty finishes #
+#       Timer
+#       Condition
+#       Event
+#       local
+#       Semaphore
+#   Exceptions:
+#       Thread Error - raised for various thread related errors, some systems may
+#               throw a runtime error in place of a thread error #
