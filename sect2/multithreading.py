@@ -218,4 +218,62 @@
 #           be done in the proper sequence to be done correctly
 #           - In a real multithreading environment, the threads can overlap, and the value 
 #               which was retireved and modified by a thread can change in between 
-#               when some other thread accesses the same value #
+#               when some other thread accesses the same value
+# 
+# Synchronization:
+# Deadlocks and race conditions are the 2 main problems that can occur in
+#   a multithreaded pythoon app
+# To deal with race condititions, deadlocks and other thread-based issues,
+#   the threading module provides the Lock object
+# In the threading module, for efficient multithreading, a primitive lock is used
+#   This lock helps up in the synchronization of two or more threads
+# The simple idea is that when a thread wants access to a specific resource, 
+#   it acquries a lock for that resource
+# Once a thread locks a particular resource, no other 
+#   thread can access it until the lock is released
+# As a result, the changes to the resource will be atomic i.e. no half-modifidied 
+#   values being avaliable to other threads, and race conditions will be averted
+# 
+# Lock Object:
+# - A lock is a low-level sychronization primitive impleented by the the threading module
+#       At any given time, a lock can be in one of two states: locked or unlocked
+# Main methods of Lock Object:
+#   acquire() - when the lock-state is unlocked, calling the acquire() metho will change
+#           the state to locked and return. However if the state is locked, the call
+#           acquire() is blocked until the release() method is called by some other thread
+#   release() - is used to set the stateto unlocked, that is to release a lock. It can
+#           be called by any thread, not necessarily the one that acquired the lock #
+
+# There are situations when we want part of our code to acquire all of the resources and
+#       execute their job first, lets do that with a lock obj #
+
+# from threading import *
+# import threading
+# from time import sleep
+
+# lock = threading.Lock()
+
+# class Example(Thread):
+#     def run(self):
+#         for i in range(20):
+#             lock.acquire()
+#             print("Lock Acquired")
+#             print("Hello from Example")
+#             sleep(1)
+#             lock.release()
+# class ExampleTwo(Thread):
+#     def run(self):
+#         for i in range(20):
+#             lock.acquire()
+#             print("Lock 2 Acquired")
+#             print("Hello from ExampleTwo")
+#             sleep(1)
+#             lock.release()
+# example = Example()
+# exampleTwo = ExampleTwo()
+# example.start()
+# sleep(0.1)
+# exampleTwo.start()
+# example.join()
+# exampleTwo.join()
+# print("End of program")
