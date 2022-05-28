@@ -159,26 +159,63 @@
 # The join() method blocks the execution of other code (work of main thread) until
 #    the thread later on which the join() method is called gets teminated #
 
-from threading import *
-from time import sleep
+# from threading import *
+# from time import sleep
 
-class Example(Thread):
-    def run(self):
-        for i in range(20):
-            print("Hello from Example")
-            sleep(1)
+# class Example(Thread):
+#     def run(self):
+#         for i in range(20):
+#             print("Hello from Example")
+#             sleep(1)
 
-class ExampleTwo(Thread):
-    def run(self):
-        for i in range(20):
-            print("Hello from ExampleTwo")
-            sleep(1)
+# class ExampleTwo(Thread):
+#     def run(self):
+#         for i in range(20):
+#             print("Hello from ExampleTwo")
+#             sleep(1)
 
-example = Example()
-exampleTwo = ExampleTwo()
-example.start()
-sleep(0.1)
-exampleTwo.start()
-example.join()
-exampleTwo.join()
-print("End of program")
+# example = Example()
+# exampleTwo = ExampleTwo()
+# example.start()
+# sleep(0.1)
+# exampleTwo.start()
+# example.join()
+# exampleTwo.join()
+# print("End of program")
+
+
+# Implementing multithreading is often referred to as concurrent programming
+# Creating apps tha support concurrency is the need of the hour, but 
+#   working with concurrent programming is a bit complicated
+# When we talk about multithreading and concurrent programming, one must
+#   keep in mind the foolowing two situations that you might encounter:
+#           Deadlocks
+#           Race conditions
+# Deadlock - a situation where a set of processes are blocked because each
+#           process is holding a resource and waitinf for another resource 
+#           acuired by some other process
+#           - The best way to understand deadlocks is by using the classic 
+#               computer science example problem known as the Dining 
+#               Philosophers Problem:
+# Dining Philosophers Problem - Five philosophers are seated on a round table with 
+#           five plates of spaghetti and five forks
+#           - At any given time a philosopher must either eat or think
+#           - Moreover, a philosopher must take the two forks adjacent to him
+#               (i.e., the left and right forks) before he can eat the spaghetti
+#               The problem of deadlock occurs when all five philosophers pick up their 
+#               right forks simultaneously
+#           - Since each of the philosophers has one fork, they will all wait for the 
+#               others to put their fork down. As a result, none of them will be able to 
+#               eat spaghetti
+#           -Similarly in a concurrent system a deadlock occurs when different threads 
+#               or processes (philosophers) try to acquire the shared system resource
+#               (forks) at the same time
+#           - As a result non e of the processes get a chance to execute because they are 
+#               all waiting for another resource held by some other process 
+# Race Conditions - is an undesirable situation that occurs when a decive or system
+#           attemps too perform two or more operations at the same time, but, 
+#           because of the nature of the device or system, the operations must
+#           be done in the proper sequence to be done correctly
+#           - In a real multithreading environment, the threads can overlap, and the value 
+#               which was retireved and modified by a thread can change in between 
+#               when some other thread accesses the same value #
