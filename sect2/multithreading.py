@@ -127,18 +127,50 @@
 #   execute -> wait -> execute
 # We can use the sleep() method which accepts time in seconds as parameters and 
 #   makes the code go to sleep(wait) for that amount of time #
+# from threading import *
+# from time import sleep
+
+# class Example(Thread):
+#     def run(self):
+#         for i in range(400):
+#             print("Hello from Example")
+#             sleep(1)
+
+# class ExampleTwo(Thread):
+#     def run(self):
+#         for i in range(400):
+#             print("Hello from ExampleTwo")
+#             sleep(1)
+
+# example = Example()
+# exampleTwo = ExampleTwo()
+# example.start()
+# sleep(0.1)
+# exampleTwo.start()
+
+# Each process us handled by a thread, 
+#   therefore, when we execute and Python prgoram, there is one thread
+#   already running by default called the main thread
+# The main thread is responsible for the execution of the programs in Python
+# The problem with this is that when its executed the two thrreads its job is done its over
+#   and it didnt tell the program that the other were still running when it printed the ast statemtn 
+# We need to handle this
+#   We would handle this with the join() method as it blocks code from executing until its done
+# The join() method blocks the execution of other code (work of main thread) until
+#    the thread later on which the join() method is called gets teminated #
+
 from threading import *
 from time import sleep
 
 class Example(Thread):
     def run(self):
-        for i in range(400):
+        for i in range(20):
             print("Hello from Example")
             sleep(1)
 
 class ExampleTwo(Thread):
     def run(self):
-        for i in range(400):
+        for i in range(20):
             print("Hello from ExampleTwo")
             sleep(1)
 
@@ -147,3 +179,6 @@ exampleTwo = ExampleTwo()
 example.start()
 sleep(0.1)
 exampleTwo.start()
+example.join()
+exampleTwo.join()
+print("End of program")
