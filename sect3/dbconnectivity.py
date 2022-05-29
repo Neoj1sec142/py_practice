@@ -64,4 +64,8 @@
 # SHOW DATABASES;   - shows all dbs
 # USE db_name; - will connect to the db 
 # DROP DATABASE db_name; - drops the db
-# #
+# CREATE TABLE  table_name(columnName1 data_type, columnName2 data_type, ...) 
+#   CREATE TABLE user(userId int PRIMARY KEY, username varchar(10), email varchar(25), userType varchar(10));
+# 
+# All queries can be created using  TablePlus#
+# INSERT INTO `python_X`.`user` (`userId`, `username`, `email`, `userType`) VALUES (1528, 'Mere', 'Mere@aol.com', 'admin');
