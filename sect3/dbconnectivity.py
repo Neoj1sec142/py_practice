@@ -60,5 +60,8 @@
 # VARCHAR(size) - can have max size of 255 chars. Variable Length String
 # 
 # Commands:
+# CREATE DATABASE db_name;  -creates a new db with db_name as name
 # SHOW DATABASES;   - shows all dbs
-# USE db_name; - will connect to the db #
+# USE db_name; - will connect to the db 
+# DROP DATABASE db_name; - drops the db
+# #
