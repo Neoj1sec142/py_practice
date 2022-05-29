@@ -31,3 +31,24 @@ class Library:
         print(f'We have the following books in our library: {self.name}')
         for book in self.bookList:
             print(book)
+    def addBook(self, book):
+        if book in self.bookList:
+            print('Book already exists')
+        else:
+            self.bookList.append(book)
+            print('Book Added')
+    def lendBook(self, book, user):
+        if book in self.bookList:
+            if book not in self.lendDict.keys():
+                self.lendDict.update({book: user})
+                print("Book has been lended. DB updated")
+            else:
+                print(f"Book is already being used by {self.lendDict[book]}")
+        else:
+            print('Apologies! We dont have this in our library')
+    def returnBook(self, book):
+        if book in self.lendDict.keys():
+            self.lendDict.pop(book)
+            print('Book Returned Successfully')
+        else:
+            print("The book does not exist in the Book Lending DB")
