@@ -69,3 +69,10 @@
 # 
 # All queries can be created using  TablePlus#
 # INSERT INTO `python_X`.`user` (`userId`, `username`, `email`, `userType`) VALUES (1528, 'Mere', 'Mere@aol.com', 'admin');
+
+
+#Connecting to DB:
+# Using pip install mysql-connector 
+# syntax to connect to db
+# databaseObj = mysql.connector.connect(host = <host name>, user = <user name>, passwd = <password>)
+#  #
