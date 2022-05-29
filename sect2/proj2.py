@@ -36,6 +36,9 @@ class Library:
             print('Book already exists')
         else:
             self.bookList.append(book)
+            bookDB = open(databaseName, 'a')
+            bookDB.write("\n")
+            bookDB.write(book)
             print('Book Added')
     def lendBook(self, book, user):
         if book in self.bookList:
@@ -52,3 +55,40 @@ class Library:
             print('Book Returned Successfully')
         else:
             print("The book does not exist in the Book Lending DB")
+
+def main():
+    while(True):
+        print(f"Welcome to the {library.name} library. The following are the options:" )
+        choice = "1. Display Books 2. Lend a Book 3. Add a Book 4. Return a Book"
+        print(choice)
+        userInput = input('Press Q to quit and C to continue:')
+        if userInput == 'C':
+            userChoice = int(input("Select an option to continue:"))
+            if userChoice == 1:
+                library.displayBooks()
+            elif userChoice == 2:
+                book = input("Enter the name of the book you want to lend:")
+                user = input("Enter the name of the user:")
+                library.lendBook(book, user)
+            elif userChoice == 3:
+                book = input("Enter the name of the book you want to add:")
+                library.addBook(book)
+            elif userChoice == 4:
+                book = input("Enter the name of the book you want to return:")
+                library.returnBook(book)
+            else: 
+                print("Please select a valid option")
+        elif userInput == 'Q':
+            break
+        else:
+            print("Please enter a valid option [Q\C]")
+
+if __name__ == '__main__':
+    booksList = []
+    databaseName = input("Enter the name of the database file with and extension:")
+    bookDB = open(databaseName, 'r')
+    for book in bookDB:
+        booksList.append(book)
+    library = Library(booksList, "Python")
+    main()
+
