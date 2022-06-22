@@ -93,3 +93,5 @@
         * relx, rely - specifies the horizontal and vertical offset as a float between 0.0 and 1.0 basically as a fraction of the height and width of the parent widget
         * relheight, relwidth - specifies the horizontal and vertical offset as a float between 0.0 and 1.0 basically as a fraction of the height and width of the parent widget 
         * bordermode - it has two possible values that hekos to manipulate the border INSIDE (default) to indicate that other options refer to the parent's inside (ignoring the parent's border) or OUTSIDE otherwise
+***   
+#### Some widgets and info for our first GUI:
