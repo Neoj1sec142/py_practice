@@ -94,4 +94,27 @@
         * relheight, relwidth - specifies the horizontal and vertical offset as a float between 0.0 and 1.0 basically as a fraction of the height and width of the parent widget 
         * bordermode - it has two possible values that hekos to manipulate the border INSIDE (default) to indicate that other options refer to the parent's inside (ignoring the parent's border) or OUTSIDE otherwise
 ***   
-#### Some widgets and info for our first GUI:
+### tkMessageBox: 
+- yet another GUI tool in Tkinter that is used to display various types of popup and dialog boxes.
+- but unlike other gui tools which are widgets, tkMessageBox is a module
+- in Py3 we cannot use tkMessageBox for py3 we have messagebox (same thing)
+* from tkinter import messagebox
+***   
+##### SYNTAX #####
+messagebox.functionName(title, message, options)
+* here functionName is the name of the appropriate message box function. Each   
+    function creates and displays a different kind of message box
+* title - is the text to be displayed in the title bar of a message box 
+* message - it is the text to be displayed as a message 
+* options - these are the alternative choices that you may use to tailor a standard message box. Some of the options you can use are default and parent. The default option is used to specify the default button, such as ABORT, RETRY, IGNORE in the message box. The parent option is used to specify the window on top of which the message box is to be displayed.
+***   
+##### messagebox Functions:
+- there are different functions that help us to create and display various message 
+    boxes:
+    * showinfo()
+    * showwarning()
+    * showerror()
+    * askquestion()
+    * askokcancel()
+    * askyesno()
+    * askretrycancel()
