@@ -118,3 +118,52 @@ messagebox.functionName(title, message, options)
     * askokcancel()
     * askyesno()
     * askretrycancel()
+- these functions work just like their name suggest
+***   
+### Making Interavive Apps:
+##### Event and Event Handling:
+* When we create a GUI in tkinter, we make a call to the mainloop() method, this 
+    method internally starts the event loop
+* An event loop is responsible for the event handling and it continusously wait for 
+    events to happen
+* During the event loop, your app checks if an event has occured. If so, then some  
+    code can be executed in response 
+* In simple words, an event is any action that occurs during the event loop that
+    might trigger some beehavior in the app, such as when a key or mouse button is pressed
+* When an event occurs, an event object is emitted, which means that an instance of a 
+    class representing the event is instansiated
+* tkinter provides a mechanism to let the programmer deal with events. For each 
+    widget, it's possible to bind functions to an event
+* if the defined event occurs in the eidget, we can call the respective handler 
+    function on the event object
+* the handler functions are the funcitons that has the logic of what to do if an eent 
+    has occured 
+* bind() function or command option to make GUI interactive
+***   
+##### bind() function:
+* whenever an event occurs, we can call the event handler function using the bind() 
+    funciton provided by the tkinter module 
+* the bind funciton bounds the event and executes the function whenever the event 
+    occurs 
+* ##### SYNTAX #####
+widget.bind(event, handler)
+***   
+##### Events in Python: 
+There are various types of events in tkinter that we can target using the bind method:
+<!-- <Button>: specifies that the mouse button is pressed with the mouse pointer over the
+     widget. The left mouse button is defined by the event <Button-1> the middle button by <Button-2> and the rightmost button by <Button-3>
+<ButtonRelease>: spcifies that the button is released. to specify the left middle or 
+    right mouse button use <ButtonRelease-1>(-2-3) respectively
+<Double-Button>: is similar to the Button-event, but here the button is 
+    double-clicked same way to specify 1,2,3
+<FocusIn>: specifies that the keyboard focus was moved to this widget, or to a child 
+    of this widget
+<FocusOut>: specifies that the keyboard focus was moved from this widget to another 
+    widget 
+<Key>: specifies that the user pressed any key </Key> -->
+***   
+##### command option: 
+-we know, generally, all the widgets provide us with the command option that calls a 
+    method whenever the user interacts or changes the state of the widget 
+##### SYNTAX ##### 
+objName = Widget(command = function_name)
