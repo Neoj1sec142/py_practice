@@ -1,3 +1,6 @@
+# OOP 1 of 6 - Classes and Instances
+# Method - function associated with a class
+
 class Employee:
     def __init__(self, first, last, pay):
         self.first = first
