@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-pdx5#4j@b5w$sn(&^vi#z!63wo4pt)4f$swuhq*%d76o0&#&tp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,9 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'meretry',
+    'corsheaders',
+    'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,7 +55,18 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 ROOT_URLCONF = 'mere_django.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny'
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 TEMPLATES = [
     {
@@ -69,8 +84,24 @@ TEMPLATES = [
     },
 ]
 
+SIMPLE_JWT = {
+'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
+'REFRESH_TOKEN_LIFETIME': timedelta(days=14),
+'ROTATE_REFRESH_TOKENS': True,
+'BLACKLIST_AFTER_ROTATION': True,
+'ALGORITHM': 'HS256',
+'SIGNING_KEY': SECRET_KEY,
+'VERIFYING_KEY': None,
+'AUTH_HEADER_TYPES': ('JWT',),
+'USER_ID_FIELD': 'username',
+'USER_ID_CLAIM': 'username',
+'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+'TOKEN_TYPE_CLAIM': 'token_type',
+}
+
 WSGI_APPLICATION = 'mere_django.wsgi.application'
 
+AUTH_USER_MODEL = 'meretry.User'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -121,7 +152,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT=os.path.join(BASE_DIR, "static/")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
