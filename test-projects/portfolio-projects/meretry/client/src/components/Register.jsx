@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
 import {RegisterUser} from '../services/Auth'
+import Client from '../services/api'
 import { useNavigate } from 'react-router-dom'
 import {Card} from 'react-bootstrap'
 
 const Register = () => {
     let nav = useNavigate()
     const [newUser, setNewUser] = useState({
-        fullname: '',
+        first_name: '',
+        last_name: '',
         username: '',
         email: '',
         password: '',
@@ -20,19 +22,35 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         await RegisterUser({
-            fullname: newUser.fullname,
+            first_name: newUser.first_name,
+            last_name: newUser.last_name,
             username: newUser.username, 
             email: newUser.email,
             password: newUser.password
         })
+        .then((res) => {
+            localStorage.setItem('username', newUser.username)
+            localStorage.setItem('user_id', res.data.id)
+            Client.post('token/obtain/', {
+                username: newUser.username,
+                password: newUser.password
+            }, {mode: "CORS"})
+            .then(res => {
+                Client.defaults.headers['Authorization'] = `JWT ${res.data.access}`
+                localStorage.setItem('access_token', res.data.access)
+                localStorage.setItem('refresh_token', res.data.refresh)
+                nav('/login')
+                return res
+            })
+        })
         setNewUser({
-            fullname: '',
+            first_name: '',
+            last_name: '',
             username: '',
             email: '',
             password: '',
             confirmPassword: ''
         })
-        nav('/login')
     }
     return(
         <div className='container'>
@@ -46,9 +64,24 @@ const Register = () => {
                         <input 
                             type="text"
                             onChange={handleChange} 
-                            name='fullname'
-                            placeholder='Enter Your Full Name'
-                            value={newUser.fullname}
+                            name='first_name'
+                            placeholder='Enter Your First Name'
+                            value={newUser.first_name}
+                            maxLength='250'
+                            required
+                            class="form-control" 
+                            id="inputEmail3"/>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    {/* <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label> */}
+                    <div class="col-sm-10">
+                        <input 
+                            type="text"
+                            onChange={handleChange} 
+                            name='last_name'
+                            placeholder='Enter Your Last Name'
+                            value={newUser.last_name}
                             maxLength='250'
                             required
                             class="form-control" 
