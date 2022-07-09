@@ -1,9 +1,10 @@
 // Service and Module Imports
 import React, {useState, useEffect} from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { CheckSession } from "./service/Auth";
+import { CheckSession } from "./services/Auth";
 import {LoginContext} from './services/LoginContext.jsx'
 // Page and Component Imports
+import Bar from './components/Nav'
 import Home from './pages/Home'
 // Style Imports
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -37,7 +38,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">
+        <Bar authenticated={authenticated} user={user} handleLogout={handleLogout}/>
+      </header>
       <LoginContext.Provider value={{userInfo, setUserInfo}}>
       <Routes>
         <Route path='/' element={<Home/>}/>
