@@ -6,3 +6,5 @@
 5. [Dunder Methods](./five.py)    
 6. [Property Decorators](./six.py)    
 ***   
+### **Notes**:
+* You can add the Class Name to print(help(<ClassName>)) to get information about the class and other classes it inherits from
