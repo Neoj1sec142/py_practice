@@ -5,6 +5,7 @@ import { CheckSession } from "./services/Auth";
 import {LoginContext} from './services/LoginContext.jsx'
 // Page and Component Imports
 import Bar from './components/Nav'
+import LoginPage from './components/Login';
 import Home from './pages/Home'
 // Style Imports
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -44,6 +45,7 @@ const App = () => {
       <LoginContext.Provider value={{userInfo, setUserInfo}}>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<LoginPage/>}/>
       </Routes>
       </LoginContext.Provider>
     </div>
