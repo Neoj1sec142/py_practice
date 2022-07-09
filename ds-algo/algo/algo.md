@@ -36,3 +36,10 @@
 - the algorithim should produce a result
 - should complete in a finite amount of time
 - must result in same output everytime.
+
+
+* Break down the problem into as many smaller problems as possible that are clearly defined
+* Time Complexity - is a mesure of how long it will take the algorithim to run
+* Space Complexity - amount of memory taken on the computer while running the algorithim 
+* When using binary search algo the items need to be sorted before the search can begin
+* 
