@@ -6,6 +6,7 @@ import {LoginContext} from './services/LoginContext.jsx'
 // Page and Component Imports
 import Bar from './components/Nav'
 import LoginPage from './components/Login';
+import Register from './components/Register';
 import Home from './pages/Home'
 // Style Imports
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -46,6 +47,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<LoginPage/>}/>
+        <Route path='/register' element={<Register/>}/>
       </Routes>
       </LoginContext.Provider>
     </div>
