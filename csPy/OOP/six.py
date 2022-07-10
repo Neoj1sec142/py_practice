@@ -1,6 +1,4 @@
 # Property Decorators - Getters, Setters, and Deleters - OOP pt 6
-from contextlib import nullcontext
-
 
 class Employee:
     def __init__(self, first, last):

@@ -32,5 +32,4 @@
 28. [Named Tuples]()   
 29. [OOP](./OOP/index.md)
 ## VIDEOS OF MAIN FOCUS:
-* OOP 1-6
 * #8 - #24
