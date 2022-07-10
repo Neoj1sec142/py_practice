@@ -43,6 +43,7 @@ const Register = () => {
                 return res
             })
         })
+        .catch(err => console.log(err))
         setNewUser({
             first_name: '',
             last_name: '',

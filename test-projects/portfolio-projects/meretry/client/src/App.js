@@ -8,6 +8,7 @@ import Bar from './components/Nav'
 import LoginPage from './components/Login';
 import Register from './components/Register';
 import Home from './pages/Home'
+import Welcome from './pages/Welcome'
 // Style Imports
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/App.css'
@@ -46,6 +47,7 @@ const App = () => {
       <LoginContext.Provider value={{userInfo, setUserInfo}}>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/welcome' element={<Welcome authenticated={authenticated} user={user}/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/register' element={<Register/>}/>
       </Routes>

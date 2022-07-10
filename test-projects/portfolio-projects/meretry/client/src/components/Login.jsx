@@ -1,9 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import {SignInUser} from '../services/Auth'
+import {LoginContext} from '../services/LoginContext'
+// import {SignInUser} from '../services/Auth'
+import Client from '../services/api'
+
 
 const LoginPage = (props) => {
     let navigate = useNavigate()
+    const {setLoginStatus} = useContext(LoginContext)
     const [user, setUser] = useState({username: '', password: ''})
 
     const handleChange = (e) => {
@@ -11,11 +15,23 @@ const LoginPage = (props) => {
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const payload = await SignInUser(user)
-        props.setUser(payload)
-        props.toggleAuthenticated(true)
-        setUser({username: '', password: ''})
-        navigate('/')
+        await Client.post('token/obtain/', user)
+        .then(res => {
+            if(res.status === 200){
+                Client.defaults.headers['Authorization'] = `JWT ${res.data.access}`
+                localStorage.setItem('access_token', res.data.access)
+                localStorage.setItem('refresh_token', res.data.refresh)
+            }else{return res}
+        })
+        .then(res => {
+            Client.get(`users/${user.username}`)
+            .then(res => {
+                localStorage.setItem('user_id', res.data.id)
+                localStorage.setItem('username', user.username)
+                setLoginStatus(true)
+                navigate('/welcome')
+            })
+        })
     }
     return(
         <div>
