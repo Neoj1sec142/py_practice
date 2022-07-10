@@ -10,7 +10,8 @@ sys.path.append('/Users/neo/.mine/practice/python/py_practice/mymodules')
     * Finds the index for a given target from a list    
 2. [find_target](./searches.py)    
     * Finds the a given target from a list or returns -1     
-3. []()    
+3. [find_pair](./searches.py)    
+    * finds a pair of values in a sequence that equeals a given target    
 4. []()    
 5. []()    
 6. []()    
