@@ -2,13 +2,15 @@ from django.shortcuts import render
 from rest_framework import generics, status, permissions
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.response import Response
-from .models import User, Post, Comment # ...your other models
+from .models import User, Post, Comment 
 from .serializers import UserSerializer, PostSerializer, GetPostSerializer, CommentSerializer # ...your other serializers
 # User views
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
 class UserList(APIView):
+    permission_classes = (permissions.AllowAny)
+    authentication_classes = ()
     def get(self, request):
         users = User.objects.all()
         return Response(users)

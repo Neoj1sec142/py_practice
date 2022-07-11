@@ -10,12 +10,12 @@ const Bar = ({authenticated, user, handleLogout}) => {
     if(user){
         authOptions = (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{justifyContent: 'space-evenly'}}>
-                <Navbar.Brand onClick={() => nav('/home')}>Meredith Hanna</Navbar.Brand>
+                <Navbar.Brand onClick={() => nav('/welcome')}>Meredith Hanna</Navbar.Brand>
                 <Card.Text style={{marginTop: '.5em'}}>Welcome {user.username}</Card.Text>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" style={{justifyContent: 'space-between'}}>
                     <Nav className="mr-auto">
-                        <Nav.Link href='/home'>Home</Nav.Link>
+                        <Nav.Link href='/welcome'>Home</Nav.Link>
                         {/* <Nav.Link href="/collab">Collaborations</Nav.Link> */}
                         {/* <Nav.Link href={`/profile/${user.id}`}>Profile</Nav.Link> */}
                         {/* <Nav.Link href="/merch">Merch</Nav.Link> */}
@@ -41,12 +41,12 @@ const Bar = ({authenticated, user, handleLogout}) => {
     }
     const publicOptions = (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{justifyContent: 'space-evenly'}}>
-            <Navbar.Brand onClick={() => nav('/home')}>Meredith Hanna</Navbar.Brand>
+            <Navbar.Brand onClick={() => nav('/')}>Meredith Hanna</Navbar.Brand>
                 <Card.Text style={{marginTop: '.5em'}}></Card.Text>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" style={{justifyContent: 'space-between'}}>
                     <Nav className="mr-auto">
-                        <Nav.Link href='/home'>Home</Nav.Link>
+                        <Nav.Link href='/'>Home</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
         </Navbar>
@@ -54,7 +54,7 @@ const Bar = ({authenticated, user, handleLogout}) => {
     return(
         <header className='master-header'>
             <div className="Mere-header" onClick={() => {
-          (authenticated && user ? nav('/home') : nav('/login'))}}>
+          (authenticated && user ? nav('/welcome') : nav('/login'))}}>
         </div>
             {authenticated && user ? authOptions : publicOptions}
         </header>

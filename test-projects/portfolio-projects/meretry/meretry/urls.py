@@ -13,6 +13,8 @@ urlpatterns = [
     path('users/logout', views.UserLogout.as_view(), name='user_logout'),
     path('users/<int:pk>', views.UserDetail.as_view(), name='user_detail'),
     path('users/<str:username>', views.UserDetailByUsername.as_view(), name='user_detail_by_username'),
+    # path('users/alldetails/', views.UserAllDetailsList.as_view(), name='useralldetails_list'),
+    # path('users/alldetails/<int:pk>', views.UserAllDetailsDetail.as_view(), name='useralldetails_detail'),
     # Post/Comment Paths
     path('posts', views.PostView.as_view()),
     path('posts/<int:id>', views.PostView.as_view()),

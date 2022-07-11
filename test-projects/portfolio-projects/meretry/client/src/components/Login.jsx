@@ -8,14 +8,16 @@ import Client from '../services/api'
 const LoginPage = (props) => {
     let navigate = useNavigate()
     const {setLoginStatus} = useContext(LoginContext)
-    const [user, setUser] = useState({username: '', password: ''})
+    const [login, setLogin] = useState({username: '', password: ''})
 
-    const handleChange = (e) => {
-        setUser({...user, [e.target.name]: e.target.value})
-    }
+    const handleChange = (e) => {setLogin({...login, [e.target.name]: e.target.value})}
+    
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await Client.post('token/obtain/', user)
+        await Client.post('token/obtain/', {
+            username: login.username,
+            password: login.password
+        })
         .then(res => {
             if(res.status === 200){
                 Client.defaults.headers['Authorization'] = `JWT ${res.data.access}`
@@ -24,14 +26,15 @@ const LoginPage = (props) => {
             }else{return res}
         })
         .then(res => {
-            Client.get(`users/${user.username}`)
+            Client.get(`users/${login.username}`)
             .then(res => {
                 localStorage.setItem('user_id', res.data.id)
-                localStorage.setItem('username', user.username)
+                localStorage.setItem('username', login.username)
                 setLoginStatus(true)
-                navigate('/welcome')
             })
+            navigate('/welcome')
         })
+        .catch(err => console.log(err, "C-Login-35"))
     }
     return(
         <div>
@@ -44,7 +47,7 @@ const LoginPage = (props) => {
                             onChange={handleChange} 
                             name='username'
                             placeholder='Enter Username'
-                            value={user.username}
+                            value={login.username}
                             maxLength='250'
                             required
                             class="form-control" 
@@ -58,14 +61,14 @@ const LoginPage = (props) => {
                             type="password" 
                             onChange={handleChange}
                             name='password'
-                            value={user.password}
+                            value={login.password}
                             maxLength='250'
                             required
                             class="form-control" 
                             id="inputPassword3"/>
                     </div>
                 </div>
-                <button type='submit' disabled={!user.username || !user.password}>Log In</button>
+                <button type='submit' disabled={!login.username || !login.password}>Log In</button>
                 <h4>Don't have an account?<Link to={'/register'}>Click Here</Link> to register.</h4>
             </form>
         </div>
