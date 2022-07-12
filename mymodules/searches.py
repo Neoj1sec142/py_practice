@@ -1,3 +1,4 @@
+# searches module
 
 def find_index(lst, target):
     '''Find the index of a value in sequence'''
@@ -38,7 +39,4 @@ def find_context(to_search, tar):
     find = lambda x, q: x[x.find(q)-18:x.find(q)+18] if q in x else -1
     return(find(to_search, str(tar)))
 
-def replc_evry_othr(lst):
-    '''replaces every other element st-indx-1 with everyother st-indx-0'''
-    lst[1::2] = lst[::2]
-    return lst
+
