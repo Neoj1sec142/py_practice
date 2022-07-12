@@ -29,5 +29,12 @@ def remove_lessrel(text):
     return w
 
 def sub_search(txt, tar):
+    '''returns true if substring carries target'''
     mark = map(lambda s: (True, s) if str(tar) in s else (False, s), txt)
-    print(list(mark))
+    return(list(mark))
+
+def find_context(to_search, tar):
+    '''returns the context 18 char radius of target search (multiline str search)'''
+    find = lambda x, q: x[x.find(q)-18:x.find(q)+18] if q in x else -1
+    print(find(to_search, str(tar)))
+

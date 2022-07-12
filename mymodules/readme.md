@@ -16,7 +16,8 @@ sys.path.append('/Users/neo/.mine/practice/pythonAB/py_practice/mymodules')
     * removes words with less than 3 chars (One-Liner)
 5. [sub_search](./searches.py)    
     * searches the string for a target sub section
-6. []()    
+6. [find_context](./searches.py)    
+    * searches a multiline string for a sequence then returns the context 18 chars radius
 7. []()    
 8. []()    
 9. []()    
