@@ -7,11 +7,11 @@ def find_index(list, target):
     return -1
 
 
-def find_target(list, target):
+def find_tar(list, tar):
     '''Find the target value in sequence'''
-    for value in list:
-        if value == target:
-            return value
+    for val in list:
+        if val == tar:
+            return val
     return -1
 
 def find_pair(values, total):
@@ -22,3 +22,8 @@ def find_pair(values, total):
         if total - value in known:
             return value, total - value
         known.add(value)
+
+def remove_lessrel(text):
+    '''Removes Words with Less than 3 characters from a paragraph variable'''
+    w = [[x for x in line.split() if len(x)>3] for line in text.split('\n')]
+    return w
