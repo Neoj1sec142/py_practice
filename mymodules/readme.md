@@ -20,6 +20,7 @@ sys.path.append('/Users/neo/.mine/practice/pythonAB/py_practice/mymodules')
     * searches a multiline string for a sequence then returns the context 18 chars radius
 7. [replc_evry_othr](./quick2.py)    
     * replaces everyother(odd) ele st-indx-1 with everyother(even) ele st-indx-0
-8. []()    
+8. [find_short](./searches.py)    
+    * Finds shortest word in a string
 9. []()    
 10. []()    

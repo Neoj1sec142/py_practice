@@ -39,4 +39,7 @@ def find_context(to_search, tar):
     find = lambda x, q: x[x.find(q)-18:x.find(q)+18] if q in x else -1
     return(find(to_search, str(tar)))
 
+def find_short(s):
+    '''Finds Shortest word in a string'''
+    return min(len(a) for a in s.split())
 
