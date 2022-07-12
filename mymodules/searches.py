@@ -1,27 +1,27 @@
 
-def find_index(list, target):
+def find_index(lst, target):
     '''Find the index of a value in sequence'''
-    for i, value in enumerate(list):
+    for i, value in enumerate(lst):
         if value == target:
             return i
     return -1
 
 
-def find_tar(list, tar):
+def find_tar(lst, tar):
     '''Find the target value in sequence'''
-    for val in list:
+    for val in lst:
         if val == tar:
             return val
     return -1
 
-def find_pair(values, total):
+def find_pair_sum(vals, tot):
     '''Finds a pair of values in a list that
          equals a given total target'''
     known = set()
-    for value in values:
-        if total - value in known:
-            return value, total - value
-        known.add(value)
+    for val in vals:
+        if tot - val in known:
+            return val, tot - val
+        return known.add(val)
 
 def remove_lessrel(text):
     '''Removes Words with Less than 3 characters from a paragraph variable'''
