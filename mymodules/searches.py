@@ -36,5 +36,9 @@ def sub_search(txt, tar):
 def find_context(to_search, tar):
     '''returns the context 18 char radius of target search (multiline str search)'''
     find = lambda x, q: x[x.find(q)-18:x.find(q)+18] if q in x else -1
-    print(find(to_search, str(tar)))
+    return(find(to_search, str(tar)))
 
+def replc_evry_othr(lst):
+    '''replaces every other element st-indx-1 with everyother st-indx-0'''
+    lst[1::2] = lst[::2]
+    return lst
