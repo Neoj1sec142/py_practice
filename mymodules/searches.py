@@ -27,3 +27,7 @@ def remove_lessrel(text):
     '''Removes Words with Less than 3 characters from a paragraph variable'''
     w = [[x for x in line.split() if len(x)>3] for line in text.split('\n')]
     return w
+
+def sub_search(txt, tar):
+    mark = map(lambda s: (True, s) if str(tar) in s else (False, s), txt)
+    print(list(mark))

@@ -3,7 +3,7 @@
 ## Path To Modules:
 ```sh
 import sys
-sys.path.append('/Users/neo/.mine/practice/python/py_practice/mymodules')
+sys.path.append('/Users/neo/.mine/practice/pythonAB/py_practice/mymodules')
 ```
 ## List Of Modules:
 1. [find_index](./searches.py)    
@@ -14,7 +14,8 @@ sys.path.append('/Users/neo/.mine/practice/python/py_practice/mymodules')
     * finds a pair of values in a sequence that equeals a given target    
 4. [remove_lessrel](./searches.py)    
     * removes words with less than 3 chars (One-Liner)
-5. []()    
+5. [sub_search](./searches.py)    
+    * searches the string for a target sub section
 6. []()    
 7. []()    
 8. []()    
