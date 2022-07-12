@@ -7,7 +7,7 @@ import Client from '../services/api'
 
 const LoginPage = (props) => {
     let navigate = useNavigate()
-    const {setLoginStatus} = useContext(LoginContext)
+    const [{setLoginStatus}] = useContext(LoginContext)
     const [login, setLogin] = useState({username: '', password: ''})
 
     const handleChange = (e) => {setLogin({...login, [e.target.name]: e.target.value})}
@@ -39,9 +39,9 @@ const LoginPage = (props) => {
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
+                <div className="row mb-3">
+                    <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+                    <div className="col-sm-10">
                         <input 
                             type="text"
                             onChange={handleChange} 
@@ -50,13 +50,13 @@ const LoginPage = (props) => {
                             value={login.username}
                             maxLength='250'
                             required
-                            class="form-control" 
+                            className="form-control" 
                             id="inputEmail3"/>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
+                <div className="row mb-3">
+                    <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+                    <div className="col-sm-10">
                         <input 
                             type="password" 
                             onChange={handleChange}
@@ -64,7 +64,7 @@ const LoginPage = (props) => {
                             value={login.password}
                             maxLength='250'
                             required
-                            class="form-control" 
+                            className="form-control" 
                             id="inputPassword3"/>
                     </div>
                 </div>
