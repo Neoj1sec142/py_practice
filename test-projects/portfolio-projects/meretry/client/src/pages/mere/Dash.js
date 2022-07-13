@@ -30,6 +30,7 @@ const Dash = (props) => {
         return(
             <div>
                 <h1>Post Management Component Here</h1>
+                <a href='/blog'>Blog</a>
                 <button className="btn btn-outline-secondary" onClick={() => setBtn(0)}>Back to Dash</button>
             </div>
         )

@@ -7,7 +7,7 @@ import Client from '../services/api'
 
 const LoginPage = (props) => {
     let navigate = useNavigate()
-    const [{setLoginStatus}] = useContext(LoginContext)
+    const {setLoginStatus} = useContext(LoginContext)
     const [login, setLogin] = useState({username: '', password: ''})
 
     const handleChange = (e) => {setLogin({...login, [e.target.name]: e.target.value})}

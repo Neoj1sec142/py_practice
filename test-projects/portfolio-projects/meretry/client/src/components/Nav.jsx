@@ -16,7 +16,7 @@ const Bar = ({authenticated, user, handleLogout}) => {
                 <Navbar.Collapse id="responsive-navbar-nav" style={{justifyContent: 'space-between'}}>
                     <Nav className="mr-auto">
                         <Nav.Link href='/welcome'>Home</Nav.Link>
-                        {/* <Nav.Link href="/collab">Collaborations</Nav.Link> */}
+                        <Nav.Link href="/mdash">Dash</Nav.Link>
                         {/* <Nav.Link href={`/profile/${user.id}`}>Profile</Nav.Link> */}
                         {/* <Nav.Link href="/merch">Merch</Nav.Link> */}
                         {/* <NavDropdown title="Portfolio" id="collasible-nav-dropdown" >
@@ -47,6 +47,7 @@ const Bar = ({authenticated, user, handleLogout}) => {
                 <Navbar.Collapse id="responsive-navbar-nav" style={{justifyContent: 'space-between'}}>
                     <Nav className="mr-auto">
                         <Nav.Link href='/'>Home</Nav.Link>
+                        <Nav.Link href='/mdash'>Dash</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
         </Navbar>

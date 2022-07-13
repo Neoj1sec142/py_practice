@@ -10,9 +10,11 @@ import Register from './components/Register';
 import Home from './pages/Home'
 import Welcome from './pages/Welcome'
 import Dash from './pages/mere/Dash';
+import Blog from './pages/mere/Blog';
 // Style Imports
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/App.css'
+
 
 
 const App = () => {
@@ -65,6 +67,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/welcome' element={<Welcome authenticated={authenticated} user={user}/>}/>
+            <Route path='/blog' element={<Blog authenticated={authenticated} userInfo={userInfo}/>}/>
             <Route path='/mdash' element={<Dash authenticated={authenticated} userInfo={userInfo}/>}/>
             <Route path='/login' element={<LoginPage/>}/>
             <Route path='/register' element={<Register/>}/>
