@@ -28,8 +28,7 @@ enterDept.place(x=170, y=90)
 
 def insertData():
     # Read the data provided by the user
-    Id = enterId.get()
-
+    # Id = enterId.get()
     name = enterName.get()
     dept = enterDept.get()
     if(name == "" or dept == ""):
@@ -37,9 +36,9 @@ def insertData():
     else:
         myDB = con.connect(host='localhost', user='root', passwd='thisguy142', database='employee', auth_plugin='mysql_native_password')
         myCur = myDB.cursor()
-        myCur.execute("insert into empDetails values("+Id+","+name+","+dept+")")
+        myCur.execute("insert into empDetails values("+name+", "+dept+")")
         myDB.commit()
-        enterId.delete(0, 'end')
+        # enterId.delete(0, 'end')
         enterName.delete(0, 'end')
         enterDept.delete(0, 'end')
         mb.showinfo("Insert Status", "Data Interted Successfully")
