@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Blog from "./Blog"
+import CheckBook from './CheckBook.jsx'
 const Dash = (props) => {
     const [btn, setBtn] = useState(0)
     // console.log(props, "Props")
@@ -14,7 +15,6 @@ const Dash = (props) => {
                     <li className="list-group-item list-group-item-dark"><button onClick={() => setBtn(2)} className="btn btn-outline-secondary">Personal Blog</button></li>
                     <li className="list-group-item list-group-item-dark"><button onClick={() => setBtn(3)} className="btn btn-outline-secondary">Calendars</button></li>
                     <li className="list-group-item list-group-item-dark"><button onClick={() => setBtn(4)} className="btn btn-outline-secondary">Check Bookings</button></li>
-                    <li className="list-group-item list-group-item-dark"><button onClick={() => setBtn(0)} className="btn btn-outline-secondary">Back to Dash</button></li>
                 </ul>
                 </div>
             </div>
@@ -45,7 +45,8 @@ const Dash = (props) => {
     }else if(btn === 4){
         return(
             <div>
-                <h1>Post Management Component Here</h1>
+                <h1>Check Booking Component Here</h1>
+                <CheckBook />
                 <button className="btn btn-outline-secondary" onClick={() => setBtn(0)}>Back to Dash</button>
             </div>
         )

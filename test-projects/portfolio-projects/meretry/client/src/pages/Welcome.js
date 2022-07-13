@@ -1,7 +1,7 @@
 import Client from "../services/api"
-const Welcome = () => {
+const Welcome = (props) => {
 
-    
+    console.log(props, "Wel - 4")
     return(
         <div>Welcome</div>
     )

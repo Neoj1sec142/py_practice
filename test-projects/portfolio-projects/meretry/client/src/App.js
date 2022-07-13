@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { CheckSession } from "./services/Auth";
+import Client from './services/api';
 import {LoginContext} from './services/LoginContext.jsx'
 // Page and Component Imports
 import Bar from './components/Nav'
@@ -11,43 +12,49 @@ import Home from './pages/Home'
 import Welcome from './pages/Welcome'
 import Dash from './pages/mere/Dash';
 import Blog from './pages/mere/Blog';
+import BlogManagement from './pages/mere/BlogManagement';
+import Profile from './pages/Profile';
+import Portfolio from './pages/Portfolio';
 // Style Imports
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/App.css'
-import BlogManagement from './pages/mere/BlogManagement';
-
-
 
 const App = () => {
-  const [authenticated, toggleAuthenticated] = useState(false)
-  const [user, setUser] = useState(null)
-  const [userInfo, setUserInfo] = useState(null)
-
-  const checkToken = async () => {
-    const user = await CheckSession()
-    setUser(user)
-    setUserInfo(user)
-    toggleAuthenticated(true)
-  }
-
-  const handleLogout = () => {
-    setUser(null)
-    setUserInfo(null)
-    toggleAuthenticated(false)
-    localStorage.clear()
-  }
+  const [loginStatus, setLoginStatus] = useState(false)
+  const [user, setUser] = useState({})
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    if(token){
-      checkToken()
-    }
-  }, [])
+    const user_id = localStorage.getItem('user_id')
+    const username = localStorage.getItem('username')
+    setUser(user_id, username)
+    if(user_id && username){
+      if(loginTest(username)) setLoginStatus(true)
+    }else setLoginStatus(false)
+  }, [loginStatus])
+
+  const loginTest = async (username) => {
+    await Client.get(`users/${username}`)
+    .then(res => {
+      if (res.status === 200){
+        setLoginStatus(true)
+        return true
+      }else{
+        setLoginStatus(false)
+        return false
+      }
+    })
+    .catch(err => {
+      setLoginStatus(false)
+      console.log(err, "ERROR HERE")
+    })
+  }
 
   return (
     <div className="App">
+      <LoginContext.Provider value={{loginStatus, setLoginStatus, user, setUser}}>
       <header className="App-header">
-        <Bar authenticated={authenticated} user={user} handleLogout={handleLogout}/>
+        
+        <Bar loginStatus={loginStatus} user={user}/>
       </header>
       <main role="main" className="container">
         {/* <div className="col-md-4 position-absolute top-20 end-0">
@@ -64,19 +71,22 @@ const App = () => {
           </div>
         </div> */}
         <div style={{marginTop: "2em"}}>
-          <LoginContext.Provider value={{userInfo, setUserInfo}}>
+          
           <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/welcome' element={<Welcome authenticated={authenticated} user={user}/>}/>
-            <Route path='/blog' element={<Blog authenticated={authenticated} userInfo={userInfo}/>}/>
-            <Route path='/blogmanage' element={<BlogManagement authenticated={authenticated} userInfo={userInfo}/>}/>
-            <Route path='/mdash' element={<Dash authenticated={authenticated} userInfo={userInfo}/>}/>
+            <Route path='/welcome' element={<Welcome loginStatus={loginStatus} user={user}/>}/>
+            <Route path='/blog' element={<Blog loginStatus={loginStatus} user={user}/>}/>
+            <Route path='/blogmanage' element={<BlogManagement loginStatus={loginStatus} user={user}/>}/>
+            <Route path='/mdash' element={<Dash loginStatus={loginStatus} user={user}/>}/>
+            <Route path='/port' element={<Portfolio loginStatus={loginStatus} user={user}/>}/>
+            <Route path='/profile' element={<Profile loginStatus={loginStatus} user={user}/>}/>
             <Route path='/login' element={<LoginPage/>}/>
             <Route path='/register' element={<Register/>}/>
           </Routes>
-          </LoginContext.Provider>
+          
         </div>
       </main>
+      </LoginContext.Provider>
     </div>
   )
 }

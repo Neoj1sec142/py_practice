@@ -20,7 +20,7 @@ export const RegisterUser = async (data) => {
   
 export const CheckSession = async () => {
     try {
-        const res = await Client.get('/auth/session')
+        const res = await Client.get('/token/refresh')
         return res.data
     } catch (err) {throw err}
 }
