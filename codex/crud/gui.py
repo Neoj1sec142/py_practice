@@ -8,8 +8,8 @@ window.geometry("600x270")
 window.title("PyTk/MySQL CRUD App")
 
 
-empId = Label(window, text="Employee ID", font=("Serif", 12))
-empId.place(x=20, y=30)
+empID = Label(window, text="Employee ID", font=("Serif", 12))
+empID.place(x=20, y=30)
 
 empName = Label(window, text="Employee Name", font=("Serif", 12))
 empName.place(x=20, y=60)
@@ -28,17 +28,17 @@ enterDept.place(x=170, y=90)
 
 def insertData():
     # Read the data provided by the user
-    # Id = enterId.get()
-    name = enterName.get()
+    Id = enterId.get()
+    nm = enterName.get()
     dept = enterDept.get()
-    if(name == "" or dept == ""):
+    if(Id == '' or nm == "" or dept == ""):
         mb.showwarning("Cannot Insert", "All Fields Required")
     else:
         myDB = con.connect(host='localhost', user='root', passwd='thisguy142', database='employee', auth_plugin='mysql_native_password')
         myCur = myDB.cursor()
-        myCur.execute("insert into empDetails values("+name+", "+dept+")")
+        myCur.execute("INSERT INTO `employee`.`empDetails` (`empID`, `empName`, `empDept`) VALUES ("+Id+", "+nm+", "+dept+");")
         myDB.commit()
-        # enterId.delete(0, 'end')
+        enterId.delete(0, 'end')
         enterName.delete(0, 'end')
         enterDept.delete(0, 'end')
         mb.showinfo("Insert Status", "Data Interted Successfully")
