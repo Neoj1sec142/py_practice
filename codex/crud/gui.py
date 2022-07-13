@@ -32,7 +32,7 @@ def insertData():
 
     name = enterName.get()
     dept = enterDept.get()
-    if(Id == "" or name == "" or dept == ""):
+    if(name == "" or dept == ""):
         mb.showwarning("Cannot Insert", "All Fields Required")
     else:
         myDB = con.connect(host='localhost', user='root', passwd='thisguy142', database='employee', auth_plugin='mysql_native_password')
