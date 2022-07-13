@@ -1,5 +1,6 @@
 # Employee CRUD App:
 ### Tech Used:
+refer to password with "mysql_native_password"
 * mysql
 * python
 * tkinter
