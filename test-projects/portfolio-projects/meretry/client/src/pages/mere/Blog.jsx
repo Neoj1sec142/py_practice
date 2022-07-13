@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react'
-
+import { useNavigate } from 'react-router-dom'
+import BlogManagement from './BlogManagement'
 const Blog = () => {
+    const nav = useNavigate()
+    
     const [pst, setPst] = useState({
         title: '',
         text: ''
@@ -8,6 +11,15 @@ const Blog = () => {
     const handleChange = (e) => {
         setPst({...pst, [e.target.name]: e.target.value})
     }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        alert(`Title: ${pst.title}\nText: ${pst.text}`)
+        setPst({title: '', text: ''})
+    }
+    const Nav1 = (e) => {
+        nav("/blogmanage")
+    }
+    
     return(
         <div className="container">
             <form>
@@ -41,7 +53,9 @@ const Blog = () => {
                             id="inputEmail3"/>
                     </div>
                 </div>
+                <button className='btn btn-outline-dark' type='submit' onClick={handleSubmit}>Submit</button>
             </form>
+            <button className='btn btn-outline-dark' onClick={Nav1}>Manage Personal Blog</button>
         </div>
     )
 }

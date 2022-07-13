@@ -14,6 +14,7 @@ import Blog from './pages/mere/Blog';
 // Style Imports
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/App.css'
+import BlogManagement from './pages/mere/BlogManagement';
 
 
 
@@ -68,6 +69,7 @@ const App = () => {
             <Route path='/' element={<Home/>}/>
             <Route path='/welcome' element={<Welcome authenticated={authenticated} user={user}/>}/>
             <Route path='/blog' element={<Blog authenticated={authenticated} userInfo={userInfo}/>}/>
+            <Route path='/blogmanage' element={<BlogManagement authenticated={authenticated} userInfo={userInfo}/>}/>
             <Route path='/mdash' element={<Dash authenticated={authenticated} userInfo={userInfo}/>}/>
             <Route path='/login' element={<LoginPage/>}/>
             <Route path='/register' element={<Register/>}/>
