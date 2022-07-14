@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
-import BlogManagement from './BlogManagement'
+import {CreatePost} from '../../services/BlogServices'
+// import BlogManagement from './BlogManagement'
 const Blog = () => {
     const nav = useNavigate()
     
@@ -11,9 +12,10 @@ const Blog = () => {
     const handleChange = (e) => {
         setPst({...pst, [e.target.name]: e.target.value})
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        alert(`Title: ${pst.title}\nText: ${pst.text}`)
+        await CreatePost(pst)
+        // alert(`Title: ${pst.title}\nText: ${pst.text}`)
         setPst({title: '', text: ''})
     }
     const Nav1 = (e) => {
