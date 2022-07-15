@@ -1,21 +1,26 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
 import {CreatePost} from '../../services/BlogServices'
+import { LoginContext } from '../../services/LoginContext'
 // import BlogManagement from './BlogManagement'
-const Blog = () => {
+const Blog = (props) => {
     const nav = useNavigate()
+    const {user} = useContext(LoginContext)
+    // console.log(user, 'YYIUSMS')
     
     const [pst, setPst] = useState({
         title: '',
-        text: ''
+        text: '',
+        name: '',
+        
     })
     const handleChange = (e) => {
         setPst({...pst, [e.target.name]: e.target.value})
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await CreatePost(pst)
-        // alert(`Title: ${pst.title}\nText: ${pst.text}`)
+        const res =  CreatePost(pst, user)
+        alert(res)
         setPst({title: '', text: ''})
     }
     const Nav1 = (e) => {
@@ -53,6 +58,21 @@ const Blog = () => {
                             required
                             className="form-control" 
                             id="inputEmail3"/>
+                    </div>
+                </div>
+                <div className="row mb-3">
+                    <label htmlFor="inputURL3" className="col-sm-2 col-form-label">URL</label>
+                    <div className="col-sm-10">
+                        <input 
+                            type="url"
+                            onChange={handleChange} 
+                            name='name'
+                            placeholder='Enter URL Here'
+                            value={pst.name}
+                            maxLength='250'
+                            required
+                            className="form-control" 
+                            id="inputURL3"/>
                     </div>
                 </div>
                 <button className='btn btn-outline-dark' type='submit' onClick={handleSubmit}>Submit</button>

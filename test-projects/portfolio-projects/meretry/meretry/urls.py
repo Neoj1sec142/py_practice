@@ -16,9 +16,9 @@ urlpatterns = [
     # path('users/alldetails/', views.UserAllDetailsList.as_view(), name='useralldetails_list'),
     # path('users/alldetails/<int:pk>', views.UserAllDetailsDetail.as_view(), name='useralldetails_detail'),
     # Post/Comment Paths
-    path('posts', views.PostView.as_view()),
-    path('posts/<int:id>', views.PostView.as_view()),
-    path('posts/<int:id>/like', views.LikeUnlikeView.as_view()),
-    path('posts/<int:id>/comments', views.CommentView.as_view()),
-    path('posts/comments/<int:id>', views.CommentView.as_view()),
+    path('posts', views.PostView.as_view(), name='post_list'),
+    path('posts/<int:id>', views.PostView.as_view(), name='post_detail'),
+    path('posts/<int:id>/like', views.LikeUnlikeView.as_view(), name='post_like'),
+    path('posts/<int:id>/comments', views.CommentView.as_view(), name='comment_list'),
+    path('posts/comments/<int:id>', views.CommentView.as_view(), name='comment_detail'),
 ]

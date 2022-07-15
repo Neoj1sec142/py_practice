@@ -1,3 +1,4 @@
+import { toBeInTheDOM } from "@testing-library/jest-dom/dist/matchers";
 import Client from "./api";
 
 
@@ -17,16 +18,14 @@ export const GetPostById = async (id) => {
     }catch(err){throw err}
 }
 
-export const CreatePost = async (newPost) => {
+export const CreatePost = async (newPost, id) => {
     console.log(newPost, "BEfore TRY")
     try {
         const data = {
+            title: newPost.title,
+            text: newPost.text,
             name: newPost.name,
-            description: newPost.description,
-            priority: newPost.priority,
-            img_url: newPost.img_url,
-            language_id: newPost.language_id,
-            user_id: newPost.user_id
+            user_id: id
         }
         console.log(data, "Before axios")
         await Client.post(`posts/`, data)
