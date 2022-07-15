@@ -1,6 +1,7 @@
 # Employee CRUD App:
 ### Tech Used:
-refer to password with "mysql_native_password"
+refer to password with os.environ.get('PASSWD') - to process .env
+
 * mysql
 * python
 * tkinter

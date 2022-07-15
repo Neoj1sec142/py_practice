@@ -2,6 +2,7 @@
 from tkinter import *
 from tkinter import messagebox as mb
 import mysql.connector as con
+import os
 
 window = Tk()
 window.geometry("600x270")
@@ -34,7 +35,7 @@ def insertData():
     if(Id == '' or nm == "" or dept == ""):
         mb.showwarning("Cannot Insert", "All Fields Required")
     else:
-        myDB = con.connect(host='localhost', user='root', passwd='thisguy142', database='employee', auth_plugin='mysql_native_password')
+        myDB = con.connect(host='localhost', user='root', passwd=os.environ.get('PASSWD'), database='employee', auth_plugin='mysql_native_password')
         myCur = myDB.cursor()
         myCur.execute("INSERT INTO employee.empDetails (empID,empName,empDept) VALUES (%s,%s,%s)", (Id, nm, dept));
         myDB.commit()
@@ -47,10 +48,18 @@ def insertData():
 insertBtn = Button(window, text="Insert", font=("Sans", 12), bg="white", command=insertData)
 insertBtn.place(x=20,y=160)
 
-# content in command =  needs to be un quoted after functions are built
+def updateData():
+    id = enterId.get()
+    nm = enterName.get()
+    dept = enterDept.get()
+    if(id=="" or nm=="" or dept==""):
+        mb.showwarning("Cannot Update", "All Fields Required")
+    else:
+        myDB = con.connect(host='localhost', user='root', passwd=os.environ.get('PASSWD'), database='employee', auth_plugin='mysql_native_password')
+
 updateBtn = Button(window, text="Update", font=("Sans", 12), bg="white", command="updateData")
 updateBtn.place(x=80,y=160)
-
+# content in command =  needs to be un quoted after functions are built
 getBtn = Button(window, text="Get", font=("Sans", 12), bg="white", command="getData")
 getBtn.place(x=150,y=160)
 
