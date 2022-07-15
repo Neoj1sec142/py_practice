@@ -36,7 +36,7 @@ def insertData():
     else:
         myDB = con.connect(host='localhost', user='root', passwd='thisguy142', database='employee', auth_plugin='mysql_native_password')
         myCur = myDB.cursor()
-        myCur.execute("INSERT INTO `employee`.`empDetails` (`empID`, `empName`, `empDept`) VALUES ("+Id+", "+nm+", "+dept+");")
+        myCur.execute("INSERT INTO employee.empDetails (empID,empName,empDept) VALUES (%s,%s,%s)", (Id, nm, dept));
         myDB.commit()
         enterId.delete(0, 'end')
         enterName.delete(0, 'end')
