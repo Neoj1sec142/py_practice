@@ -5,7 +5,7 @@
 ***     
 ### Codex:   
 - This contains the python section of Code X app  
-[]()      
+[Codex-Index](./codex/readme.md)      
 ***   
 ### csPy:   
 - this will contain the lessons presented on Corey Shafers Youtube Channel for python basic   
@@ -24,23 +24,5 @@
 []()    
 ***   
 ## Code X Todo Next:
-### Sect 1
-[x] Loops
-[x] Lists 
-[x] Read-Only Lists (tuples)
-[x] Key Value Pairs (Dictionaries)
-[x] Sets
-[x] Functions
-[x] Supermarket Cashier Project
-### Sect 2
-[x] File Handling
-[x] Exception Handling
-[x] Modules
-[x] OOP
-[x] Multithreading
-[x] Library Management Project 2
-### Sect 3
-[x] Database Connectivity
-[x] GUI
 [] Employee CRUD App
 [] Python Interview
