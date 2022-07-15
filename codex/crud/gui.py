@@ -42,6 +42,7 @@ def insertData():
         enterId.delete(0, 'end')
         enterName.delete(0, 'end')
         enterDept.delete(0, 'end')
+        show()
         mb.showinfo("Insert Status", "Data Interted Successfully")
         myDB.close()
 
@@ -62,6 +63,7 @@ def updateData():
         enterId.delete(0, "end")
         enterName.delete(0, "end")
         enterDept.delete(0, "end")
+        show()
         mb.showinfo("Update Status:", "Data Updated Successfully")
         myDB.close()
 
@@ -84,14 +86,45 @@ def getData():
 
 getBtn = Button(window, text="Get", font=("Sans", 12), bg="white", command=getData)
 getBtn.place(x=150,y=160)
-# content in command =  needs to be un quoted after functions are built
-deleteBtn = Button(window, text="Delete", font=("Sans", 12), bg="white", command="deleteData")
+
+def deleteData():
+    if(enterId.get() == ""):
+        mb.showwarning("Please provide the Id of the employee you want to remove.")
+    else:
+        myDB = con.connect(host='localhost', user='root', passwd=os.environ.get('PASSWD'), database='employee', auth_plugin='mysql_native_password')
+        myCur = myDB.cursor()
+        myCur.execute("DELETE FROM empDetails where empID="+enterId.get()+"")
+        myDB.commit()
+        enterId.delete(0, "end")
+        enterName.delete(0, "end")
+        enterDept.delete(0, "end")
+        show()
+        mb.showinfo("Delete Status:", "Data Deleted Successfully")
+        myDB.close()
+
+deleteBtn = Button(window, text="Delete", font=("Sans", 12), bg="white", command=deleteData)
 deleteBtn.place(x=210,y=160)
 
-resetBtn = Button(window, text="Reset", font=("Sans", 12), bg="white", command="resetData")
+def resetData():
+    enterId.delete(0, "end")
+    enterName.delete(0, "end")
+    enterDept.delete(0, "end")
+
+resetBtn = Button(window, text="Reset", font=("Sans", 12), bg="white", command=resetData)
 resetBtn.place(x=20,y=210)
+
+def show():
+    myDB = con.connect(host='localhost', user='root', passwd=os.environ.get('PASSWD'), database='employee', auth_plugin='mysql_native_password')
+    myCur = myDB.cursor()
+    myCur.execute("SELECT * FROM empDetails")
+    rows = myCur.fetchall()
+    showData.delete(0, showData.size())
+    for row in rows:
+        addData = str(row[0])+' '+row[1]+' '+row[2]
+        showData.insert(showData.size()+1, addData)
+    myDB.close()
 
 showData = Listbox(window)
 showData.place(x=330, y=30)
-
+show()
 window.mainloop()
