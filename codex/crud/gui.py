@@ -56,8 +56,16 @@ def updateData():
         mb.showwarning("Cannot Update", "All Fields Required")
     else:
         myDB = con.connect(host='localhost', user='root', passwd=os.environ.get('PASSWD'), database='employee', auth_plugin='mysql_native_password')
+        myCur = myDB.cursor()
+        myCur.execute("UPDATE empDetails set empName=%s,empDept=%s where empID=%s", (nm, dept, id))
+        myDB.commit()
+        enterId.delete(0, "end")
+        enterName.delete(0, "end")
+        enterDept.delete(0, "end")
+        mb.showinfo("Update Status:", "Data Updated Successfully")
+        myDB.close()
 
-updateBtn = Button(window, text="Update", font=("Sans", 12), bg="white", command="updateData")
+updateBtn = Button(window, text="Update", font=("Sans", 12), bg="white", command=updateData)
 updateBtn.place(x=80,y=160)
 # content in command =  needs to be un quoted after functions are built
 getBtn = Button(window, text="Get", font=("Sans", 12), bg="white", command="getData")
