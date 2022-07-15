@@ -1,8 +1,8 @@
-
+import os
 from tkinter import *
 from tkinter import messagebox as mb
 import mysql.connector as con
-import os
+
 
 window = Tk()
 window.geometry("600x270")
@@ -67,10 +67,24 @@ def updateData():
 
 updateBtn = Button(window, text="Update", font=("Sans", 12), bg="white", command=updateData)
 updateBtn.place(x=80,y=160)
-# content in command =  needs to be un quoted after functions are built
-getBtn = Button(window, text="Get", font=("Sans", 12), bg="white", command="getData")
-getBtn.place(x=150,y=160)
 
+def getData():
+    if(enterId.get() == ""):
+        mb.showwarning("Fetch Status:", "Please Enter the ID of the Employee You Are Looking For.")
+    else:
+        myDB = con.connect(host='localhost', user='root', passwd=os.environ.get('PASSWD'), database='employee', auth_plugin='mysql_native_password')
+        myCur = myDB.cursor()
+        myCur.execute("SELECT * FROM empDetails where empID="+enterId.get()+"")
+        rows = myCur.fetchall()
+        for row in rows:
+            enterName.insert(0, row[1])
+            enterDept.insert(0, row[2])
+        # mb.showinfo("")
+        myDB.close()
+
+getBtn = Button(window, text="Get", font=("Sans", 12), bg="white", command=getData)
+getBtn.place(x=150,y=160)
+# content in command =  needs to be un quoted after functions are built
 deleteBtn = Button(window, text="Delete", font=("Sans", 12), bg="white", command="deleteData")
 deleteBtn.place(x=210,y=160)
 
