@@ -20,3 +20,5 @@ CREATE TABLE empDetails(empID int PRIMARY KEY, empName varchar(100), empDept var
 ## To Execute App:
 python3 gui.py
 ```
+CREATE DATABASE task;
+CREATE TABLE taskDet(tId int PRIMARY KEY, tPrio int, tTit varchar(100), tLoc varchar(100));
