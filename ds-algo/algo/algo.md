@@ -50,11 +50,23 @@
 * O is a uppercase letter
 
 Linear Search O(n)
-Binary sarch O(log n) - wayyyyy faster
+Binary search O(log n) - wayyyyy faster
 
 constant time O(1)
 Linear Time O(n)
-Logarithmic Time O(ln n) 
+Logarithmic Time O(log n) 
 quadratic Time O(n^2)
 cubic runtime O(n^3)
-quasilinear O(n log n) - merge sort worst case
+quasilinear runtime O(n log n) - merge sort worst case
+polynomial runtime O(n^k) where k = a given number -efficent and often 
+        used
+exponential runtime O(x^n) = brute force not efficient 
+- each char in a password can be 1 in 69 characters via 8 char pass 
+    8^69 possible options
+- which is why the longer your password the safer
+* Facotrial/Combinitorial - n! = n(n-1)(n-2)until you reach 1
+    * EX: 3!: 3 x 2 x 1 = 6
+    * EX2: 4!: 4 x 3 x 2 x 1 = 24
+
+### How to determine the worst case complexity of an alorithm:
+* binary search - best case O(1) - worst case O(log n) 

@@ -1,3 +1,5 @@
+## probably need to make iit a class with a class variable as the output
+
 ## Add
 def add(n1, n2):
     return n1 + n2
