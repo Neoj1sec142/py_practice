@@ -42,4 +42,19 @@
 * Time Complexity - is a mesure of how long it will take the algorithim to run
 * Space Complexity - amount of memory taken on the computer while running the algorithim 
 * When using binary search algo the items need to be sorted before the search can begin
-* 
+* When evaluating we time complexity we always want to see the worst case efficiency
+
+- **Big O** is the theoretical definition of the complexity of an algorithm as a function of the size
+
+* Notation use to descibe complexity
+* O is a uppercase letter
+
+Linear Search O(n)
+Binary sarch O(log n) - wayyyyy faster
+
+constant time O(1)
+Linear Time O(n)
+Logarithmic Time O(ln n) 
+quadratic Time O(n^2)
+cubic runtime O(n^3)
+quasilinear O(n log n) - merge sort worst case
