@@ -1,7 +1,7 @@
 import os
 from tkinter import *
 from tkinter import messagebox as mb
-from .operations import *
+
 
 win = Tk()
 win.geometry("600x270")
@@ -23,7 +23,8 @@ enterI2.place(x=170, y=60)
 def resetData():
     enterI1.delete(0, "end")
     enterI2.delete(0, "end")
-    global output = None
+    output = None
+    return output
     
 
 resetBtn = Button(win, text="Reset", font=("Sans", 12), bg="white", command=resetData)
@@ -33,7 +34,8 @@ def multiply(n1, n2):
     if n1 == None or n2 == None:
         mb.showwarning("Please input 2 numbers to multiply")
     else:
-        
+        output = n1, n2
+        show()
         return output
 
 mltpyBtn = Button(win, text="X", font=("Sans", 12), bg="white", command="resetData")
