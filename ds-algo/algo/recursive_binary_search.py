@@ -12,9 +12,11 @@ def recursive_binary_search(list, target):
                 return recursive_binary_search(list[mid+1:], target)
             else:
                 return recursive_binary_search(list[:mid], target)
+
 # the return is important so you can eventually end the while loop
 # hence instructing the program to return the output value to itself
 # works on the problem until it has a good answer
+# python has a maximum recursion depth
 
 ## Verification
 def verify(result):
