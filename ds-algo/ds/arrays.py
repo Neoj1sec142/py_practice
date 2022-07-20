@@ -10,3 +10,12 @@
 #         print(True)
 #         break
 
+# nums = []
+# nums.append(2)
+# print(len(nums))
+# nums.append(5)
+# print(len(nums))
+# nums.extend(new_list)
+# print(nums)
+# del nums[:1:-1]
+# print(nums)
