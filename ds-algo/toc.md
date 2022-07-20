@@ -1,1 +1,11 @@
 # Table of contents for data structures and algorithims
+[Data Structures MD](./ds.md)
+    * [Arrays](./arrays.py)
+    * [Linked List Class](./linked_list.py)   
+[Algorithms MD](./algo.md)
+    * [Binary Search](./binary_search.py)     
+    * [Linear Search](./linear_search.py)     
+    * [Linked List Merge Sort](./linked_list_merge_sort.py)     
+    * [Merge Sort](./merge_sort.py)     
+    * [Recursive Binary Search](./recursive_binary_search.py)     
+    * []()     
