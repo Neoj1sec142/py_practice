@@ -17,4 +17,4 @@ def index_of_min(values):
             min_index = i
     return min_index
 
-# print(selection_sort(nums))
+print(selection_sort(nums))

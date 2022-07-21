@@ -12,7 +12,7 @@ def quicksort(values):
             less_than_pivot.append(value)
         else:
             greater_than_pivot.append(value)
-    print("%15s %1s %-15s"%(less_than_pivot, pivot, greater_than_pivot))
+    # print("%15s %1s %-15s"%(less_than_pivot, pivot, greater_than_pivot))
     return quicksort(less_than_pivot) + [pivot] + quicksort(greater_than_pivot)
 
 sorted_numbers = quicksort(nums)

@@ -69,4 +69,8 @@ exponential runtime O(x^n) = brute force not efficient
     * EX2: 4!: 4 x 3 x 2 x 1 = 24
 
 ### How to determine the worst case complexity of an alorithm:
-* binary search - best case O(1) - worst case O(log n) 
+* binary search - best case O(1) - worst case O(log n)
+Selection Sort O(n^2)
+quick sort O(n^2) - best used with random pivot rather than first 
+    pivot
+Merge sort O(n log n)
