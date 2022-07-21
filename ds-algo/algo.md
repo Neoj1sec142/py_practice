@@ -1,4 +1,6 @@
 # Algorithims:    
+![run](./assets/runtimes.png)
+![pro](./assets/productivity.png)
 - An algorithim is a set of steps or instructions for completing a task. In Computer Science an algorithim is a set of steps a program takes to finish a task. Understanding the algorithim isn't as important as knowing when to apply it. When you have a set of steps you can identify the best way to achieve this 
 - Interviewers don't want you to know how to write a specific algorithim they want you to be able to take a problem and break it down into components and evaluate the best route to solving the problem (algorithimic thinking)
 - EX: in a given range 1-10 can you guess the number? (num = 7)    
